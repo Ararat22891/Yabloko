@@ -1,0 +1,174 @@
+<resources>
+    <string name="app_name">Партия Яблоко</string>
+    <string name="regvalue">Регистрация</string>
+    <string name="prosba">Пожалуйста, заполните все поля,
+        чтобы создать аккаунт</string>
+    <string name="email">Email</string>
+    <string name="acc">Есть аккаунт?</string>
+    <string name="pass">Пароль</string>
+    <string name="enterpass">Подтвердите пароль</string>
+    <string name="signin">Зарегистрироваться</string>
+    <string name="signinwith">Войти с помощью</string>
+    <string name="signa">Вход</string>
+    <string name="noacc">Нет аккаунта?</string>
+    <string name="crate">Создать</string>
+    <string name="enter">Войти</string>
+    <string name="yabloko">Яблоко</string>
+    <string name="cod">Код</string>
+
+    <string name="regOtd">Региональное отделение</string>
+    <string name="mestOtd">Местное отделение</string>
+    <string name="zayavka">Заявка на вступление в партию</string>
+
+    <string name="pol_party">Политическая партия</string>
+    <string name="noWar">Политическая партия</string>
+    <string name="FIO">ФИО</string>
+    <string name="telNumber">Номер телефона</string>
+    <string name="Region">Выберите регион</string>
+    <string name="dolz">Должность в партии</string>
+    <string name="entering">Подтверждение</string>
+    <string name="non">Не указано</string>
+    <string name="weSentCode">Мы отправили код подтверждения
+    на </string>
+    <string name="watch_materials">Смотреть материалы</string>
+    <string name="supp_con">Поддержка, связь</string>
+    <string name="money">Поддержка Яблока</string>
+    <string name="feedback">Обратная связь</string>
+
+    <string name="materials">Материалы</string>
+    <string name="polPred">Идеология:</string>
+    <string name="religiya">Мировозрение:</string>
+    <string name="mainInPeople">Главное в людях:</string>
+    <string name="Vdox">Вдохновляют:</string>
+    <string name="mainInLife">Главное в жизни:</string>
+    <string name="prodolz">Продожить регистрацию</string>
+    <string name="wrongPass">Неправильная эл.почта?</string>
+    <string name="uved">Уведомления</string>
+    <string name="socseti">Соц.сети</string>
+    <string name="acssInSoc">Аккаунты в соц.сетях</string>
+    <string name="changePass">Сменить пароль</string>
+    <string name="textOfPost"> Текст записи</string>
+    <string name="mediaFiles"> Медиафайлы</string>
+    <string name="addImage"> Добавить медиафайлы</string>
+    <string name="zagr">Загружено </string>
+    <string name="bigText">На протяжении современной истории России практически на каждом поворотном этапе стране предлагалась альтернатива. Выбор был всегда. Остается он даже сегодня.
+
+«Ценностная свобода выбора — главная отличительная черта человека. Настоящий выбор — это выбор между добром и злом, жизнью и нежизнью.
+
+Утрата ценностей и смыслов в современной жизни является следствием почти добровольного отказа от свободы выбора. Жизненно важно вернуть эту тему в политический дискурс. В конце концов, самое страшное — это то, что происходит с личностью человека, когда он отказывается от свободы выбора».</string>
+    <string name="hintEmailEntering">Введите код подтверждения</string>
+    <string name="enterreal">Подтвердить</string>
+    <string name="bigtext">«Яблоко» – это сообщество тех, кто хочет реальных перемен в стране. Мы люди самого разного возраста и самых разных занятий, но мы искренне любим свою страну и переживаем за ее судьбу.
+\u000A
+        \u000A
+Присоединяйтесь к старейшей демократической партии России! Становитесь частью команды, которая борется за мир и свободу, уважение к человеку и равенство возможностей, европейское будущее России. Приходите к нам, давайте вместе строить страну, о которой мы все мечтаем.</string>
+
+    <string name="vstupi">Вступить</string>
+    <string name="calendar">Календарь</string>
+    <string name="today_merop">Сегодняшние события:</string>
+    <string name="exitFromAcc">Выйти из аккаунта</string>
+    <string name="deleteAccount">Удалить аккаунт</string>
+
+    <string name="add_sob">Добавить событие +</string>
+    <string name="dolzn">Должность</string>
+    <string name="calendar_opis">Смотри новые встречи, ивенты, мероприятия, события в календаре</string>
+    <string name="transl">Трансляции</string>
+    <string name="transl_opis">Смотри новые трансляции со всей России</string>
+    <string name="open">Открыть</string>
+    <string name="chose_region">Введите регион</string>
+    <string name="sostou">Член партии</string>
+    <string-array name="dolznosti">
+        <item>Член партии</item>
+        <item>Сторонник партии</item>
+        <item>Пользователь приложения</item>
+    </string-array>
+
+    <string-array name="regions">
+        <item>не выбрано</item>
+        <item>Алтайский край</item>
+        <item>Амурская область</item>
+        <item>Архангельская область</item>
+        <item>Астраханская область</item>
+        <item>Белгородская область</item>
+        <item>Брянская область</item>
+        <item>Владимирская область</item>
+        <item>Волгоградская область</item>
+        <item>Вологодская область</item>
+        <item>Воронежская область</item>
+        <item>Москва</item>
+        <item>Санкт-Петербург</item>
+        <item>Забайкальский край</item>
+        <item>Ивановская область</item>
+        <item>Иркутская область</item>
+        <item>Кабардино-Балкарская Республика</item>
+        <item>Калининградская область</item>
+        <item>Калужская область</item>
+        <item>Камчатский край</item>
+        <item>Карачаево-Черкесская Республика</item>
+        <item>Кемеровская область</item>
+        <item>Кировская область</item>
+        <item>Костромская область</item>
+        <item>Краснодарский край</item>
+        <item>Красноярский край</item>
+        <item>Курганская область</item>
+        <item>Курская область</item>
+        <item>Ленинградская область</item>
+        <item>Липецкая область</item>
+        <item>Московская область</item>
+        <item>Мурманская область</item>
+        <item>Нижегородская область</item>
+        <item>Новгородская область</item>
+        <item>Новосибирская область</item>
+        <item>Омская область</item>
+        <item>Оренбургская область</item>
+        <item>Орловская область</item>
+        <item>Пензенская область</item>
+        <item>Пермский край</item>
+        <item>Приморский край</item>
+        <item>Псковская область</item>
+        <item>Республика Адыгея (Адыгея)</item>
+        <item>Республика Алтай</item>
+        <item>Республика Башкортостан</item>
+        <item>Республика Бурятия</item>
+        <item>Республика Дагестан</item>
+        <item>Республика Ингушетия</item>
+        <item>Республика Калмыкия</item>
+        <item>Республика Карелия</item>
+        <item>Республика Коми</item>
+        <item>Республика Марий Эл</item>
+        <item>Республика Мордовия</item>
+        <item>Республика Саха</item>
+        <item>Республика Северная Осетия</item>
+        <item>Республика Татарстан</item>
+        <item>Республика Тыва</item>
+        <item>Республика Хакасия</item>
+        <item>Ростовская область</item>
+        <item>Рязанская область</item>
+        <item>Самарская область</item>
+        <item>Саратовская область</item>
+        <item>Сахалинская область</item>
+        <item>Свердловская область</item>
+        <item>Смоленская область</item>
+        <item>Ставропольский край</item>
+        <item>Тамбовская область</item>
+        <item>Тверская область</item>
+        <item>Томская область</item>
+        <item>Тульская область</item>
+        <item>Тюменская область</item>
+        <item>Удмуртская Республика</item>
+        <item>Ульяновская область</item>
+        <item>Хабаровский край</item>
+        <item>Ханты-Мансийский автономный округ</item>
+        <item>Челябинская область</item>
+        <item>Чеченская Республика</item>
+        <item>Чувашская Республика</item>
+        <item>Ярославская область</item>
+
+
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="news">Новости</string>
+
+
+</resources>

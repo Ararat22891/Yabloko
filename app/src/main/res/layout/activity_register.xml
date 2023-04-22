@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:layout_height="match_parent"
+    tools:context=".SignIn"
+    android:background="?attr/bgc"
+    >
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="50dp"
+        android:layout_centerHorizontal="true"
+
+        android:layout_height="wrap_content">
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+
+        android:background="?attr/bgc"
+        >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:background="?attr/bgc"
+            android:textColor="?attr/tC"
+            android:fontFamily="@font/boldsp"
+            android:text="@string/regvalue"
+
+            android:textSize="42sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/bgc"
+            android:layout_marginTop="15dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/boldsp"
+            android:text="@string/prosba"
+            android:textColor="#A5A5A5"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:textAlignment="center"
+
+            android:clickable="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/boldsp"
+            android:text="@string/acc"
+            android:textColor="@color/green"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextTextEmailAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/red"
+            android:ems="10"
+            android:fontFamily="@font/boldsp"
+            android:hint="@string/email"
+            android:textColorHint="?attr/hint_color"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="5dp"
+            android:textColor="@color/green"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:backgroundTint="@color/red"
+            android:ems="10"
+            android:textColorHint="?attr/hint_color"
+
+            android:fontFamily="@font/boldsp"
+            android:hint="@string/pass"
+            android:inputType="textPassword"
+            android:textColor="@color/green"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textColorHint="?attr/hint_color"
+            android:inputType="textPassword"
+
+            android:backgroundTint="@color/red"
+            android:fontFamily="@font/boldsp"
+            android:hint="@string/enterpass"
+
+            android:textColor="@color/green"
+            android:textSize="24sp"/>
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/red"
+            android:fontFamily="@font/boldsp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:text="@string/signin"
+            android:onClick="onRegister"
+            android:textSize="18sp" />
+
+
+
+
+
+    </TableLayout>
+
+
+
+    </ScrollView>
+</RelativeLayout>

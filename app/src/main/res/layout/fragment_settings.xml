@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_height="match_parent"
+
+    tools:context=".SettingsFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:paddingLeft="5dp"
+        android:fontFamily="@font/boldsp"
+        android:text="@string/materials"
+        android:textColor="?attr/tC"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:background="@color/red"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/document"
+        android:text="@string/materials"
+        style="@style/settings_buttons" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="5dp"
+        android:fontFamily="@font/boldsp"
+        android:text="@string/supp_con"
+        android:textColor="?attr/tC"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:drawableLeft="@drawable/dollar"
+        android:text="@string/money"
+        style="@style/settings_buttons" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/sms"
+        android:text="@string/feedback"
+        style="@style/settings_buttons" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="5dp"
+        android:fontFamily="@font/boldsp"
+        android:text="@string/uved"
+        android:textColor="?attr/tC"
+        />
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/withToggle"
+    android:background="@color/red">
+    <Button
+        android:layout_width="wrap_content"
+        android:enabled="false"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:drawableLeft="@drawable/sms"
+        android:text="@string/feedback"
+        android:backgroundTint="@color/red"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:gravity="left|center"
+        android:fontFamily="@font/boldsp"/>
+    <com.bitvale.switcher.SwitcherX
+        android:layout_width="wrap_content"
+        android:id="@+id/toggle"
+        android:layout_marginRight="15dp"
+        app:switcher_on_color="@color/green"
+        app:switcher_off_color="@color/gray"
+        android:layout_gravity="center|right"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"/>
+</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="5dp"
+        android:fontFamily="@font/boldsp"
+        android:text="@string/socseti"
+        android:textColor="?attr/tC"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/account_soc"
+        android:text="@string/acssInSoc"
+        style="@style/settings_buttons" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="5dp"
+        android:fontFamily="@font/boldsp"
+        android:text="@string/pass"
+        android:textColor="?attr/tC"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/ic_baseline_key_24"
+        android:text="@string/changePass"
+        style="@style/settings_buttons" />
+</TableLayout>

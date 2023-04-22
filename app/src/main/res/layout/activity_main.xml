@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:title="@string/news"-->
+<!--        android:titleTextAppearance="@style/text_toolbar"-->
+
+<!--        android:background="?attr/ThemeColorMain"-->
+<!--        />-->
+
+
+
+    <TableLayout
+    android:layout_width="match_parent"
+    android:id="@+id/main_menu"
+    android:layout_height="?actionBarSize"
+    android:background="?attr/ThemeColorMain"
+    android:gravity="center"
+    >
+    <TableRow
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:gravity="left"
+        >
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:background="?attr/ThemeColorMain"
+            android:onClick="onClick"
+            app:srcCompat="@drawable/enter_post"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:layout_weight="999"
+            android:fontFamily="@font/boldsp"
+            android:layout_marginLeft="10dp"
+
+            android:textSize="26dp"
+            android:text="Новости"
+            />
+
+        <ImageButton
+            android:id="@+id/settings_button"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:visibility="gone"
+            android:onClick="onSettingsClick"
+            app:srcCompat="@drawable/ic_baseline_settings_24"
+            android:layout_gravity="center"
+            android:layout_marginRight="10dp"
+            android:background="?attr/ThemeColorMain"/>
+        <ImageButton
+            android:visibility="gone"
+            android:id="@+id/imageButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/search"
+            android:onClick="onClick"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="center"
+            android:background="?attr/ThemeColorMain"/>
+    </TableRow>
+
+
+
+
+</TableLayout>
+
+    <FrameLayout
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        >
+
+    </FrameLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="wrap_content"
+        android:id="@+id/bottom"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        app:menu="@menu/menu"
+        app:itemBackground="?attr/ThemeColorMain"
+        app:itemIconTint="@drawable/bottom_navigation_items_color"
+        app:itemTextColor="@drawable/bottom_navigation_items_color"
+
+        app:labelVisibilityMode="labeled"
+
+        >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+
+</TableLayout>

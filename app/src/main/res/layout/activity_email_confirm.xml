@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignIn"
+    android:background="?attr/bgc"
+    >
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="?attr/bgc"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:background="?attr/bgc"
+            android:textColor="?attr/tC"
+            android:fontFamily="@font/boldsp"
+            android:text="@string/entering"
+
+            android:textSize="42sp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/bgc"
+            android:layout_marginTop="15dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/boldsp"
+
+            android:textColor="#A5A5A5"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClick"
+            android:textAlignment="center"
+            android:clickable="true"
+
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/boldsp"
+            android:text="@string/wrongPass"
+            android:textColor="@color/green"
+            android:textSize="20sp" />
+
+
+<Button
+    android:id="@+id/but_confirm"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/red"
+    android:fontFamily="@font/boldsp"
+    android:layout_marginTop="15dp"
+    android:textColor="@color/white"
+    android:text="Отправить код"
+    android:textAllCaps="false"
+    android:onClick="onClick"
+    android:textSize="18sp"
+    />
+
+        <Button
+            android:id="@+id/but_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/red"
+            android:fontFamily="@font/boldsp"
+            android:textColor="@color/white"
+            android:text="@string/prodolz"
+            android:onClick="onClickRegister"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            />
+
+
+    </TableLayout>
+
+
+
+
+</RelativeLayout>

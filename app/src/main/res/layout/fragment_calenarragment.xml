@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".Calenarragment"
+   >
+<TableLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="15dp"
+    android:layout_centerHorizontal="true">
+    <CalendarView
+        android:id="@+id/calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
+        android:background="@drawable/calendar_new"
+
+        android:weekDayTextAppearance="@style/weekdateTextApperance" />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAlignment="center"
+    android:textColor="?attr/tC"
+    android:fontFamily="@font/boldsp"
+    android:layout_marginTop="15dp"
+    android:textSize="20dp"
+    android:textStyle="bold"
+    android:text="@string/today_merop"
+    />
+    <Button
+        android:backgroundTint="@color/red"
+        android:text="@string/add_sob"
+        android:textAllCaps="false"
+        android:layout_marginTop="10dp"
+        android:textSize="16dp"
+        android:textColor="@color/white"
+        android:fontFamily="@font/boldsp"
+        />
+
+</TableLayout>
+</RelativeLayout>

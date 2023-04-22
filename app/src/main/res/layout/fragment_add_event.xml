@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+    tools:context=".AddEventFragment">
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/boldsp"
+            android:textColor="?attr/tC"
+            android:text="@string/textOfPost"
+            android:textSize="18dp"/>
+        <EditText
+            android:id="@+id/textOfNews"
+            android:layout_height="108dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/boldsp"
+            android:gravity="left|center_horizontal"
+            android:textColor="@color/white"
+            android:background="@drawable/shape"
+            android:paddingLeft="5dp"
+            android:textSelectHandle="@color/black"
+            android:textSelectHandleLeft="@color/black"
+            android:textSelectHandleRight="@color/black"
+            android:textAlignment="gravity"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/boldsp"
+            android:layout_marginTop="30dp"
+            android:textColor="?attr/tC"
+            android:text="@string/mediaFiles"
+            android:textSize="18dp"/>
+        <Button
+            android:id="@+id/buttonAddMedia"
+            android:layout_width="wrap_content"
+            android:background="@drawable/shape"
+            android:layout_height="wrap_content"
+            android:gravity="center|center_horizontal"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="@string/addImage"
+            style="@style/settings_buttons" />
+
+        <TextView
+            android:id="@+id/textViewAddedMedia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/boldsp"
+            android:layout_marginTop="5dp"
+
+            android:visibility="gone"
+            android:textColor="?attr/tC"
+            android:gravity="center"
+            android:text="@string/zagr"
+            android:textSize="14dp"/>
+
+        <Button
+            android:id="@+id/button_addNews"
+            android:layout_width="wrap_content"
+
+            android:backgroundTint="@color/green"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content"
+            android:gravity="center|center_horizontal"
+            android:textSize="18sp"
+
+            android:textStyle="bold"
+            android:text="Опубликовать"
+            style="@style/settings_buttons" />
+    </TableLayout>
+
+    <RelativeLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layerType="hardware"
+        >
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progrss_bar"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/SpinKitView.Large.FadingCircle"
+        android:layout_centerInParent="true"
+
+        app:SpinKit_Color="@color/green"
+        />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

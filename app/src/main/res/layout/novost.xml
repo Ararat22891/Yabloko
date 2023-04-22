@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    >
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/shape_post"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/users_ico"
+                android:layout_width="50dp"
+
+                android:layout_height="50dp"
+                android:src="@drawable/kreugl" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_gravity="center|left"
+
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/users_if"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="?attr/tC"
+                    android:fontFamily="@font/boldsp"
+                    android:textSize="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Айрат Губайдуллин"/>
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_below="@+id/users_if"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/gray_text"
+                    android:layout_width="wrap_content"
+                    android:textSize="14dp"
+                    android:layout_height="wrap_content"
+                    android:text="23 марта в 13:40"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+        <TextView
+            android:textColor="?attr/tC"
+            android:id="@+id/posts_text"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/boldsp"
+            android:textSize="16dp"
+            android:layout_marginVertical="10dp"
+            android:text="Приветствую, друзья! Прямо сейчас на пляже"
+            />
+
+
+        <ImageView
+            android:id="@+id/ris"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+
+            />
+
+
+
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/check_box"
+                android:layout_height="40dp">
+
+                <CheckBox
+                    android:id="@+id/lovee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginHorizontal="5dp"
+                    android:button="@drawable/__icon_color__1_"
+                    android:fontFamily="@font/boldsp"
+                    android:paddingLeft="5dp"
+                    android:textColor="#747474" />
+            </RelativeLayout>
+<!--            <RelativeLayout-->
+<!--                android:background="@drawable/check_box"-->
+<!--                android:layout_width="80dp"-->
+<!--                android:layout_height="40dp">-->
+
+<!--                <CheckBox-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:layout_marginHorizontal="5dp"-->
+<!--                    android:button="@drawable/comm"-->
+<!--                    android:fontFamily="@font/boldsp"-->
+<!--                    android:paddingLeft="5dp"-->
+<!--                    android:text="65"-->
+<!--                    android:textColor="#747474" />-->
+<!--            </RelativeLayout>-->
+        </LinearLayout>
+    </TableLayout>
+
+
+</RelativeLayout>

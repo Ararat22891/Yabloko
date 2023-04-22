@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?actionBarSize"
+    tools:context=".MaterialsFragment">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="?actionBarSize"
+        android:layout_marginLeft="80dp"
+        android:layout_marginBottom="?actionBarSize"
+        >
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="140dp"
+        android:background="?attr/bgc"
+        android:layout_marginBottom="5dp"
+        android:src="@drawable/docs_materials" />
+
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="140dp"
+            android:layout_marginBottom="5dp"
+            android:background="?attr/bgc"
+            android:src="@drawable/metodika" />
+
+        <ImageButton
+            android:id="@+id/imageButton8"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="140dp"
+            android:background="?attr/bgc"
+            android:src="@drawable/nabludat" />
+
+        <ImageButton
+            android:id="@+id/imageButton9"
+            android:layout_width="wrap_content"
+            android:layout_height="140dp"
+
+            android:background="?attr/bgc"
+            android:src="@drawable/public_merop" />
+
+    </TableLayout>
+</RelativeLayout>

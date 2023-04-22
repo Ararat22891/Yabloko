@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "588579874213",
+    "project_id": "yabloko-5021e",
+    "storage_bucket": "yabloko-5021e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588579874213:android:a06af5fb648c302b09f44c",
+        "android_client_info": {
+          "package_name": "com.tatdep.yabloko"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588579874213-57f5kbet7s9sf0ftif0v1gl53vsf5c0b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDu9kXR30IblhBOkNhLC52TH47hD1Y2fbA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588579874213-57f5kbet7s9sf0ftif0v1gl53vsf5c0b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

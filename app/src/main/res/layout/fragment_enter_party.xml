@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".EnterPartyFragment"
+
+    >
+
+    <RelativeLayout
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+        <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/boldsp"
+                android:text="Заявка на вступление в партию"
+                android:textColor="?attr/tC"
+                android:textSize="24sp"
+
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/main_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/boldsp"
+                android:text="@string/bigtext"
+                android:textColor="?attr/tC"
+                android:textSize="16sp"
+                android:gravity="left"
+                android:scrollHorizontally="false"
+                android:inputType="textMultiLine"
+                android:singleLine="false"
+                android:layout_marginTop="40dp"
+                />
+
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/red"
+                android:text="@string/vstupi"
+                android:layout_marginTop="40dp"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:fontFamily="@font/boldsp"
+                android:textSize="18sp"
+                />
+        </TableLayout>
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+        <item
+            android:title="Новости"
+            android:id="@+id/news"
+            android:enabled="true"
+            app:showAsAction="always"
+            android:icon="@drawable/vector"
+            />
+        <item
+            android:title="Мероприятия"
+            android:icon="@drawable/calendar"
+            android:enabled="true"
+            app:showAsAction="always"
+            android:id="@+id/merop"
+            />
+
+        <item
+            android:id="@+id/enterto"
+            android:title="Вступить"
+            android:enabled="true"
+            app:showAsAction="always"
+            android:icon="@drawable/galka"
+            />
+
+        <item
+            android:id="@+id/accs"
+            android:enabled="true"
+            app:showAsAction="always"
+            android:title="Аккаунт"
+            android:icon="@drawable/account_ico"
+            />
+</menu>

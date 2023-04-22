@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name = "mestOtdAdyg">
+        <item>Не выбрано</item>
+        <item>МО Майкопского района</item>
+        <item>ПО а. Мамхег</item>
+        <item>ПО а. Хакуринохабль</item>
+        <item>ПО Кошехабльского района</item>
+        <item>ПО Красногвардейского района</item>
+        <item>ПО Хатажукайского с/п</item>
+        <item>ПО № 1 г. Майкопа</item>
+        <item>ПО № 10 г. Майкопа</item>
+        <item>ПО № 11 г. Майкопа</item>
+        <item>ПО № 12 г. Майкопа</item>
+        <item>ПО № 13 г. Майкопа</item>
+        <item>ПО № 14 г. Майкопа</item>
+        <item>ПО № 15 г. Майкопа</item>
+        <item>ПО № 2 г. Майкопа</item>
+        <item>ПО № 3 г. Майкопа</item>
+        <item>ПО № 4 г. Майкопа</item>
+        <item>ПО № 5 г. Майкопа</item>
+        <item>ПО № 6 г. Майкопа</item>
+        <item>ПО № 7 г. Майкопа</item>
+        <item>ПО № 8 г. Майкопа</item>
+        <item>ПО № 9 г. Майкопа</item>
+    </string-array>
+
+    <string-array name = "mestOtdAdlt">
+        <item>Не выбрано</item>
+        <item>МО в г. Горно-Алтайске</item>
+        <item>МО в Кош-Агачском р-не</item>
+        <item>МО в Майминском р-не</item>
+        <item>МО в Шебалинском р-не</item>
+        <item>ПО « Музей»</item>
+        <item>ПО «Гардинка»</item>
+        <item>ПО «Каясы»</item>
+        <item>ПО «Кучияк»</item>
+        <item>ПО «Кызыл-Озек»</item>
+        <item>ПО «Майма»</item>
+        <item>ПО «Мебельный»</item>
+        <item>ПО «Мыюта»</item>
+        <item>ПО «Поселок»</item>
+        <item>ПО «Трактовый»</item>
+        <item>ПО «Центральный»</item>
+        <item>ПО «Шебалино»</item>
+    </string-array>
+    <string-array name = "mestOtdBashk">
+        <item>Не выбрано</item>
+        <item>На учёте при РО</item>
+    </string-array>
+
+    <string-array name = "mestOtdBuryat">
+        <item>МО Городское</item>
+        <item>МО Зеленое</item>
+    </string-array>
+
+    <string-array name = "mestOtdDages">
+        <item>Не выбрано</item>
+        <item>МО г. Буйнакск</item>
+        <item>МО г. Дербент</item>
+        <item>МО г. Махачкала</item>
+    </string-array>
+
+    <string-array name = "mestOtdIng">
+        <item>Не выбрано</item>
+        <item>МО г. Назрань</item>
+        <item>МО Карабулак</item>
+        <item>МО Малгобекский р-он</item>
+        <item>МО Назрановский р-он</item>
+        <item>МО Орджоникидзевская</item>
+        <item>МО Сунженский район</item>
+    </string-array>
+
+    <string-array name = "mestOtdKabard">
+        <item>Не выбрано</item>
+        <item>Баксанское ПО</item>
+        <item>Зольское МО</item>
+        <item>Майское ПО</item>
+        <item>Нальчикское МО</item>
+        <item>По в Жемтала</item>
+        <item>ПО в Кара-Су</item>
+        <item>ПО в п. Эльбрусский</item>
+        <item>ПО в с. Каменка</item>
+        <item>Прохладненское ПО</item>
+        <item>Шалушкинское ПО</item>
+    </string-array>
+
+    <string-array name = "mestOtdKalm">
+        <item>Не выбрано</item>
+        <item>Малодербетовское МО</item>
+        <item>Элистинское МО</item>
+        <item>Кетченеровское ПО</item>
+        <item>Яшкульское ПО</item>
+    </string-array>
+
+    <string-array name = "mestOtdKarac">
+        <item>Не выбрано</item>
+        <item>МО в Адыге-Хабльском р-не</item>
+        <item>МО в Зеленчукском р-не</item>
+        <item>МО в Малокарачаевском р-не</item>
+        <item>МО в Прикубанском р-не</item>
+        <item>МО в Урупском р-не</item>
+        <item>МО в Усть-Джегутинском р-не</item>
+        <item>МО в Хабезском р-не</item>
+        <item>МО г. Черкесск</item>
+    </string-array>
+
+    <string-array name = "mestOtdCarel">
+        <item>Не выбрано</item>
+        <item>МО г. Петрозаводск</item>
+        <item>МО Олонецкого района</item>
+        <item>МО Прионежского района</item>
+        <item>МО Пудожского района</item>
+        <item>ПО «Вилга»</item>
+        <item>ПО «Водлинское»</item>
+        <item>ПО «Голиковка-Зарека»</item>
+        <item>ПО «Древлянка-Перевалка»</item>
+        <item>ПО «Заозерье»</item>
+        <item>ПО «Ключевая»</item>
+        <item>ПО «Кубовское»</item>
+        <item>ПО «Кукковка»</item>
+        <item>ПО «Ладвинское»</item>
+        <item>ПО «Пудожское»</item>
+        <item>ПО «Соломенное»</item>
+        <item>ПО «Центр»</item>
+        <item>ПО «Шуйское»</item>
+    </string-array>
+
+    <string-array name = "mestOtdComi">
+        <item>Не выбрано</item>
+        <item>На учёте при РО</item>
+    </string-array>
+
+    <string-array name = "mestOtdMary">
+        <item>Не выбрано</item>
+        <item>МО г. Йошкар-Ола</item>
+        <item>ПО г. Волжск</item>
+        <item>ПО г. Козьмодемьянск</item>
+        <item>ПО п. Звенигово</item>
+        <item>ПО п. Красногорский</item>
+        <item>ПО п. Медведево</item>
+        <item>ПО п. Сернур</item>
+        <item>ПО п. Советский</item>
+    </string-array>
+
+    <string-array name = "mestOtdMord">
+        <item>Не выбрано</item>
+        <item>На учёте при РО</item>
+    </string-array>
+
+    <string-array name = "mestOtdSaha">
+        <item>Не выбрано</item>
+        <item>На учёте при РО</item>
+    </string-array>
+
+    <string-array name = "mestOtdOse">
+        <item>Не выбрано</item>
+        <item>Алагирское МО</item>
+        <item>Ардонское МО</item>
+        <item>Ардонское ПО</item>
+        <item>Архонское ПО</item>
+        <item>Бесланское ПО №1</item>
+        <item>Бесланское ПО №2</item>
+        <item>Владикавказское левобережное МО</item>
+        <item>Владикавказское левобережное ПО №1</item>
+        <item>Владикавказское левобережное ПО №2</item>
+        <item>Владикавказское левобережное ПО №3</item>
+        <item>Владикавказское правобережное МО</item>
+        <item>Владикавказское правобережное ПО №1</item>
+        <item>Владикавказское правобережное ПО №2</item>
+        <item>Владикавказское правобережное ПО №3</item>
+        <item>Дигорское МО</item>
+        <item>Заманкульское ПО</item>
+        <item>Кадгаронское ПО</item>
+        <item>Ногирское ПО</item>
+        <item>Октябрьское МО</item>
+        <item>Ольгинское ПО</item>
+        <item>Правобережное МО</item>
+        <item>Пригородное МО</item>
+        <item>Санибинское ПО</item>
+        <item>Черменское МО</item>
+    </string-array>
+
+    <string-array name = "mestOtdTatarstan">
+        <item>Не выбрано</item>
+        <item>МО г. Альметьевск</item>
+        <item>МО г.Зеленодольска</item>
+        <item>МО г.Казани</item>
+        <item>ПО Аксубаево</item>
+        <item>ПО г. Заинска</item>
+        <item>ПО г.Набережные Челны</item>
+        <item>ПО №1 МО г.Зеленодольска</item>
+        <item>ПО №1 МО г.Казани</item>
+        <item>ПО №2 МО г.Зеленодольска</item>
+        <item>ПО №2 МО г.Казани</item>
+        <item>ПО №3 МО г.Зеленодольска</item>
+        <item>ПО №3 МО г.Казани</item>
+        <item>ПО №4 МО г.Зеленодольска</item>
+        <item>ПО №5 МО г.Зеленодольска</item>
+    </string-array>
+
+    <string-array name = "mestOtdTyva">
+        <item>Не выбрано</item>
+        <item>На учёте при РО</item>
+    </string-array>
+
+    <string-array name = "mestOtdUdm">
+        <item>Не выбрано</item>
+        <item>На учёте при РО</item>
+    </string-array>
+
+    <string-array name = "mestOtdHa">
+        <item>Не выбрано</item>
+        <item>На учёте при РО</item>
+    </string-array>
+
+    <string-array name = "mestOtdChecnya">
+        <item>Не выбрано</item>
+        <item>На учёте при РО</item>
+    </string-array>
+
+    <string-array name = "mestOtdChuvash">
+        <item>Не выбрано</item>
+        <item>МО в г. Новочебоксарск</item>
+        <item>МО в г. Чебоксары</item>
+        <item>ПО в г. Мариинский-Посад</item>
+    </string-array>
+
+    <string-array name = "mestOtdAlt">
+        <item>Не выбрано</item>
+        <item>На учёте РО</item>
+    </string-array>
+
+    <string-array name="mestOtdAltkray">
+        <item>Не выбрано</item>
+        <item>МО г.Рубцовска</item>
+        <item>МО Железнодорожного района</item>
+        <item>МО Индустриального района</item>
+        <item>ПО Павловского района</item>
+        <item>ПО г. Камня-на-Оби</item>
+        <item>ПО Завьяловского района</item>
+        <item>ПО Ленинского района</item>
+        <item>ПО Октябрьского района</item>
+        <item>ПО Центрального района</item>
+        <item>ПО Шелаболихинского района</item>
+    </string-array>
+
+    <string-array name = "mestOtdKrasnodar">
+        <item>Не выбрано</item>
+        <item>МО в г.Геленджик</item>
+        <item>МО в Павловском районе</item>
+        <item>МО г. Краснодара</item>
+        <item>МО г. Новороссийска</item>
+        <item>МО г.Ейска</item>
+        <item>МО г.Сочи</item>
+        <item>МО г.Тихорецка</item>
+        <item>ПО г.Апшеронска</item>
+        <item>ПО в Красноармейском районе</item>
+        <item>ПО в Лазаревского района</item>
+        <item>ПО в Усть - Лабинском районе</item>
+        <item>ПО в Абинском районе</item>
+        <item>ПО в Приморско-Ахтарском районе</item>
+        <item>ПО в Староминском районе</item>
+        <item>ПО г. Горячий ключ</item>
+        <item>ПО г. Крымска</item>
+        <item>ПО г.Анапы</item>
+        <item>ПО г.Кропоткина</item>
+        <item>ПО Лабинского района</item>
+        <item>ПО пос. Верхнебаканский</item>
+        <item>ПО с.Абрау-Дюрсо</item>
+        <item>ПО с.Васильевка</item>
+        <item>ПО Тбилисского района</item>
+    </string-array>
+
+    <string-array name = "mestOtdKrasnoyarsk">
+        <item>Не выбрано</item>
+        <item>МО г. Железногорск</item>
+        <item>ПО Березовского района</item>
+        <item>ПО г. Канск</item>
+        <item>ПО г. Красноярск</item>
+        <item>ПО д. Ермолаево</item>
+        <item>ПО с. Есаулово</item>
+    </string-array>
+
+    <string-array name = "mestOtdPrimor">
+        <item>Не выбрано</item>
+       <item>МО г. Владивостока</item>
+        <item>ПО Артёмовское межрайонное</item>
+    </string-array>
+
+
+    <string-array name = "mestOtdStavrop">
+        <item>Не выбрано</item>
+        <item>Ессентукское МО</item>
+        <item>Кисловодское ПО</item>
+        <item>Минераловодское ПО</item>
+        <item>МО в г. Ставрополе</item>
+        <item>МО в г. Ессентуки</item>
+        <item>МО в г. Кисловодске</item>
+        <item>МО в г. Минеральные Воды</item>
+        <item>МО в г. Пятигорске</item>
+        <item>МО в г. Светлоград</item>
+        <item>На учёте при РО</item>
+        <item>ПО в Арзгирском р-не</item>
+        <item>ПО в г. Буденовске</item>
+        <item>ПО в г. Левокумском р-не</item>
+        <item>Ставропольское МО</item>
+    </string-array>
+
+    <string-array name = "mestOtdHabarov">
+        <item>Не выбрано</item>
+        <item>Амурское МО</item>
+        <item>МО в г. Комсомольск-на-Амуре</item>
+        <item>МО г.Хабаровске</item>
+    </string-array>
+
+    <string-array name = "mestOtdAmur">
+        <item>Не выбрано</item>
+        <item>ПО Белогорского р-на</item>
+        <item>ПО Благовещенска №1</item>
+        <item>ПО Благовещенска №2</item>
+        <item>ПО Благовещенска №3</item>
+        <item>ПО Тамбовского р-на</item>
+        <item>ПО Тындинского р-на</item>
+    </string-array>
+
+    <string-array name = "mestOtdArhangel">
+        <item>Не выбрано</item>
+        <item>МО в Вельском районе</item>
+        <item>МО в г. Архангельск</item>
+        <item>МО в г. Новодвинск</item>
+        <item>МО в г. Северодвинск</item>
+        <item>ПО в Онежском районе</item>
+    </string-array>
+
+    <string-array name = "mestOtdAstrah">
+        <item>Не выбрано</item>
+        <item>МО Икрянинского района</item>
+        <item>МО Кировского района</item>
+        <item>МО Ленинского района</item>
+        <item>МО Советского района</item>
+    </string-array>
+
+    <string-array name = "mestOtdBelgor">
+        <item>Не выбрано</item>
+        <item>На учёте при РО</item>
+    </string-array>
+
+    <string-array name = "mestOtdBryansk">
+        <item>Не выбрано</item>
+        <item>ПО Бежицкого района</item>
+        <item>МО Советского района</item>
+        <item>ПО Фокинского района </item>
+    </string-array>
+
+    <string-array name = "mestOtdVladimir">
+        <item>Не выбрано</item>
+        <item>Владимирское МО</item>
+        <item>Вязниковское МО</item>
+        <item>Ковровское МО</item>
+        <item>Кольчугинское МО</item>
+        <item>Муромское МО</item>
+        <item>Юрьев-Польский МО</item>
+    </string-array>
+
+    <string-array name = "mestOtdVolg">
+        <item>Не выбрано</item>
+        <item>МО г. Волжский</item>
+        <item>МО г. Камышин</item>
+        <item>ПО в Дзержинском районе</item>
+        <item>ПО в Красноармейском районе</item>
+        <item>ПО в Тракторозаводском районе</item>
+        <item>ПО в Центральном районе</item>
+    </string-array>
+
+    <string-array name = "mestOtdVologod">
+        <item>Не выбрано</item>
+        <item>МО г. Вологда</item>
+        <item>ПО г. Череповец</item>
+        <item>ПО г.Великий Устюг</item>
+        <item>ПО Кичменгско-Городецкое</item>
+        <item>ПО Тарногское</item>
+    </string-array>
+
+    <string-array name = "mestOtdVorone">
+        <item>Не выбрано</item>
+        <item>МО в Коминтерновском и Центральном районах</item>
+        <item>МО в Левобережном и Железнодорожном  районах</item>
+        <item>МО  в Ленинском и Советском  районах</item>
+        <item>ПО в г. Нововоронеже Воронежской области</item>
+    </string-array>
+
+    <string-array name = "mestOtdIvanov">
+        <item>Не выбрано</item>
+        <item>ПО в Ленинском районе № 1</item>
+        <item>ПО в Ленинском районе № 2</item>
+        <item>ПО в Ленинском районе № 3</item>
+        <item>ПО в Ленинском районе № 4</item>
+        <item>ПО в Ленинском районе № 5</item>
+        <item>ПО в Октябрьском районе № 1</item>
+        <item>ПО в Октябрьском районе № 2</item>
+        <item>ПО в Октябрьском районе № 3</item>
+        <item>ПО во Советском районе № 1 </item>
+        <item>ПО во Советском районе № 2 </item>
+        <item>ПО во Советском районе № 3</item>
+        <item>ПО во Фрунзенском районе № 1</item>
+        <item>ПО во Фрунзенском районе № 2</item>
+        <item>ПО во Фрунзенском районе № 3</item>
+    </string-array>
+
+    <string-array name = "mestOtdIrku">
+        <item>Не выбрано</item>
+        <item>Баклашинское ПО</item>
+        <item>Братское ПО</item>
+        <item>г. Иркутск Левобережное МО</item>
+        <item>г.Усть-Илимск</item>
+        <item>Зиминское ПО</item>
+        <item>Шелеховское ПО</item>
+    </string-array>
+
+    <string-array name = "mestOtdKaliningr">
+        <item>Не выбрано</item>
+        <item>Балтийское МО</item>
+        <item>Гусевское ПО</item>
+        <item>Зеленоградское ПО</item>
+        <item>Калининградское МО</item>
+        <item>Пионерское ПО</item>
+        <item>Полесское ПО</item>
+        <item>Светловское ПО</item>
+        <item>Светлогорское ПО</item>
+        <item>Советское ПО</item>
+        <item>Черняховское ПО</item>
+    </string-array>
+
+    <string-array name = "mestOtdKaluga">
+        <item>Не выбрано</item>
+        <item>Байконур</item>
+        <item>г. Обнинск</item>
+        <item>Детская больница</item>
+        <item>Кубяка</item>
+        <item>Ленинского округа</item>
+        <item>Малинники</item>
+        <item>Московская д. 13</item>
+        <item>Московского округа</item>
+        <item>Октябрьского округа</item>
+        <item>п. Воротынск, Бабынинского района</item>
+        <item>Первомайская</item>
+        <item>Село Дворцы Дзержинского района</item>
+        <item>Силикатный </item>
+        <item>Тульская</item>
+    </string-array>
+
+    <string-array name = "mestOtdKamchat">
+        <item>Не выбрано</item>
+        <item>На учёте при РО</item>
+    </string-array>
+
+    <string-array name = "mestOtdKemero">
+        <item>Не выбрано</item>
+        <item>Кемеровское МО</item>
+        <item>Новокузнецкое МО</item>
+    </string-array>
+
+    <string-array name = "mestOtdKirovo">
+        <item>Не выбрано</item>
+        <item>МО Омутнинское(районное)</item>
+        <item>МО Первомайское г.Киров</item>
+        <item>МО Северное г.Киров</item>
+        <item>МО Северо-Восточное г.Киров</item>
+        <item>МО Северо-Западное г.Киров</item>
+        <item>МО Центральное г.Киров</item>
+        <item>МО Юго-Восточное г.Киров</item>
+        <item>МО Юго-Западное г.Киров</item>
+        <item>МО Южное г.Киров</item>
+        <item>ПО Кирово-Чепецкое(городское)</item>
+        <item>ПО Оричевское(районное)</item>
+        <item>ПО Радужнинское г.Киров</item>
+    </string-array>
+
+    <string-array name = "mestOtdKostrom">
+        <item>Не выбрано</item>
+        <item>Кадыйское МО</item>
+        <item>Макарьев ПО</item>
+        <item>МО Давыдовский округ г. Костромы</item>
+        <item>МО Заволжский округ г. Костромы</item>
+        <item>МО Фабричный округ г. Костромы</item>
+        <item>МО Центральный округ г. Костромы</item>
+        <item>Нерехтское МО</item>
+        <item>Никольское ПО</item>
+        <item>Судиславское МО</item>
+    </string-array>
+
+    <string-array name = "mestOtdKurgans">
+        <item>Не выбрано</item>
+        <item>Волжский Местное отделение</item>
+        <item>Камышин Местное отделение</item>
+        <item>Первичное отделение Дзержинского района</item>
+        <item>Первичное отделение Красноармейского района</item>
+        <item>Первичное отделение Тракторозаводского района</item>
+        <item>Первичное отделение Центрального района</item>
+    </string-array>
+
+    <string-array name = "mestOtdKursk">
+        <item>Не выбрано</item>
+        <item>На учёте при РО</item>
+    </string-array>
+
+    <string-array name = "mestOtdLeningr">
+        <item>Не выбрано</item>
+        <item>МО Выборгского района</item>
+        <item>ПО г.Всеволожск</item>
+        <item>ПО г.Выборг</item>
+        <item>ПО г.Гатчина</item>
+        <item>ПО Кировское</item>
+        <item>ПО Колтушское</item>
+        <item>ПО Приозерское</item>
+        <item>ПО Янино</item>
+    </string-array>
+
+    <string-array name = "mestOtdLipetsk">
+        <item>Не выбрано</item>
+        <item>Липецкое МО</item>
+        <item>Чаплыгинское МО</item>
+    </string-array>
+
+    <string-array name = "mestOtdMoscObl">
+        <item>Не выбрано</item>
+        <item>Дмитровское ПО</item>
+        <item>Домодедовское МО</item>
+        <item>Дубненское ПО</item>
+        <item>Каширское ПО</item>
+        <item>Королёвское МО</item>
+        <item>Красноармейское ПО</item>
+        <item>Красногорское ПО</item>
+        <item>Ленинское ПО</item>
+        <item>Лобненское ПО</item>
+        <item>Люберецкое ПО</item>
+        <item>На учёте при РО</item>
+        <item>Одинцовское ПО</item>
+        <item>Подольское МО</item>
+        <item>Пушкинское ПО</item>
+        <item>Раменское ПО</item>
+        <item>Реутовское ПО</item>
+        <item>Сергиево-Посадское МО</item>
+        <item>Фрязинское МО</item>
+        <item>химкинское МО</item>
+        <item>Чеховское ПО</item>
+        <item>Электростальское ПО</item>
+    </string-array>
+
+    <string-array name = "mestOtdMurmansk">
+        <item>Не выбрано</item>
+        <item>Апатитско-Кировское МО</item>
+        <item>Мурманское МО</item>
+        <item>Печенгское МО</item>
+        <item>Североморское ПО</item>
+    </string-array>
+
+    <string-array name = "mestOtdNizhegorod">
+        <item>Не выбрано</item>
+        <item>Автозаводское</item>
+        <item>Дзержинское</item>
+        <item>Канавинское</item>
+        <item>Ленинское</item>
+        <item>Московское</item>
+        <item>На учете при РО</item>
+        <item>Нижегородское</item>
+        <item>Приокское</item>
+        <item>Советское</item>
+        <item>Сормовское</item>
+    </string-array>
+
+    <string-array name = "mestOtdNovgorod">
+        <item>Не выбрано</item>
+        <item>Западный район</item>
+        <item>МО Великий Новгород</item>
+        <item>МО Мошенского района</item>
+        <item>МО Окуловского района</item>
+        <item>МО Парфинского района</item>
+        <item>МО Хвойнинское</item>
+        <item>Софийская сторона</item>
+        <item>Торговая сторона</item>
+    </string-array>
+
+    <string-array name = "mestOtdNovosib">
+        <item>Не выбрано</item>
+        <item>МО Восточное г.Новосибирска</item>
+        <item>МО Центрального р-на г.Новосибирска</item>
+        <item>ПО Левобережное г.Новосибирска</item>
+        <item>ПО Октябрьского р-на г.Новосибирска</item>
+    </string-array>
+
+    <string-array name = "mestOtdOmsk">
+        <item>Не выбрано</item>
+        <item>Азовское</item>
+        <item>Восточное</item>
+        <item>Западное</item>
+        <item>Муромцевское</item>
+        <item>На учете при РО</item>
+        <item>Омское</item>
+        <item>Северное</item>
+        <item>Центральное</item>
+        <item>Южное</item>
+    </string-array>
+
+    <string-array name = "mestOtdOrenburg">
+        <item>Не выбрано</item>
+        <item>Оренбургское МО</item>
+        <item>Орское МО</item>
+        <item>ПО в п. Новая Биофабрика г. Орска</item>
+    </string-array>
+
+    <string-array name = "mestOtdOrlov">
+        <item>Не выбрано</item>
+        <item>МО в г. Ливны</item>
+        <item>МО в г. Орле</item>
+    </string-array>
+
+    <string-array name = "mestOtdPenzen">
+        <item>Не выбрано</item>
+        <item>Зареченское мо</item>
+        <item>Пензенское мо</item>
+    </string-array>
+
+    <string-array name = "mestOtdRostov">
+        <item>Не выбрано</item>
+        <item>МО Ростов-на-Дону</item>
+        <item>ПО Нововчеркасск</item>
+        <item>ПО Таганрог</item>
+    </string-array>
+
+    <string-array name = "mestOtdPerm">
+        <item>Не выбрано</item>
+        <item>МО «Пермское» г.Перми</item>
+        <item>МО в г. Кудымкаре</item>
+        <item>МО в г. Соликамске</item>
+        <item>МО в Ленинском р-не г. Перми</item>
+        <item>МО в Свердловском районе г.Перми</item>
+        <item>МО в г. Березники</item>
+        <item>МО в г. Добрянка</item>
+        <item>МО в г. Краснокамске</item>
+        <item>МО в г. Кунгуре</item>
+        <item>МО в Кировском р-не г. Перми</item>
+        <item>МО в Мотовилихинском р-не г. Перми</item>
+        <item>ПО в Орджоникидзевском районе г. Перми</item>
+    </string-array>
+
+    <string-array name = "mestOtdPskov">
+        <item>Не выбрано</item>
+        <item>Восточное местное отделение</item>
+        <item>Западное местное отделение</item>
+        <item>Северное местное отделение</item>
+        <item>Центральное местное отделение</item>
+        <item>Юго-восточное местное отделение</item>
+        <item>Юго-западное местное отделение</item>
+        <item>Южное местное отделение</item>
+    </string-array>
+
+
+    <string-array name = "mestOtdRyazn">
+        <item>Не выбрано</item>
+    <item>Первичное отделение в Железнодорож-ном районе г.Рязани</item>
+    <item>Первичное отделение в Московском районе г.Рязани</item>
+    <item>Первичное отделение в Октябрьском районе г.Рязани</item>
+    <item>Первичное отделение в Советском районе г.Рязани</item>
+</string-array>
+
+    <string-array name = "mestOtdSamara">
+        <item>Не выбрано</item>
+        <item>На учете при РО</item>
+    </string-array>
+
+    <string-array name = "mestOtdSaratov">
+        <item>Не выбрано</item>
+        <item>МО в г. Саратове</item>
+        <item>На учёте при РО</item>
+        <item>ПО в р.п Базарный Карабулак</item>
+        <item>ПО в Воскресенском  р-не</item>
+        <item>ПО в Красноармейском р-не</item>
+    </string-array>
+
+    <string-array name = "mestOtdSahalin">
+        <item>Не выбрано</item>
+        <item>На учёте при РО</item>
+    </string-array>
+
+    <string-array name = "mestOtdSverd">
+        <item>Не выбрано</item>
+        <item>Артемовского ГО</item>
+        <item>Асбестовский ГО</item>
+        <item>Верх-Исетский р-н</item>
+        <item>г. Нижний Тагил</item>
+        <item>ГО Белоярский</item>
+        <item>ГО Богданович</item>
+        <item>ГО Верхнее Дуброво</item>
+        <item>ГО Верхняя Пышма</item>
+        <item>ГО Заречный</item>
+        <item>ГО Нижняя Салда</item>
+        <item>ГО Превоуральск-Центральный</item>
+        <item>ГО Ревда</item>
+        <item>ГО Сухой Лог</item>
+        <item>Железнодорожный р-н</item>
+        <item>Камышловский МР</item>
+        <item>Качканарский ГО</item>
+        <item>Кировский р-н</item>
+        <item>Ленинский р-н</item>
+        <item>На учёте при РО</item>
+        <item>Нижнесергинский МР</item>
+        <item>Октябрьский р-н</item>
+        <item>Орджоникидзевский р-н</item>
+        <item>Полевской ГО</item>
+        <item>Режевской ГО</item>
+        <item>Серовский ГО</item>
+        <item>Сысертский ГО</item>
+        <item>Тавдинский ГО</item>
+        <item>Талицкий ГО</item>
+        <item>Туринский ГО</item>
+        <item>Чкаловский р-н</item>
+    </string-array>
+
+    <string-array name = "mestOtdSmol">
+        <item>Не выбрано</item>
+        <item>десногорская ПО</item>
+        <item>Заднепровское МО</item>
+        <item>Ленинское МО</item>
+        <item>На учете при РО</item>
+        <item>Промышленное МО</item>
+        <item>Рославльская ПО</item>
+        <item>Сафоновская ПО</item>
+        <item>Хиславичская ПО</item>
+        <item>Ярцевская ПО</item>
+    </string-array>
+
+    <string-array name = "mestOtdTambov">
+        <item>Не выбрано</item>
+        <item>Жердевское районное ПО</item>
+        <item>Котовское городское МО</item>
+        <item>Мичуринское городское МО</item>
+        <item>Моршанское городское МО</item>
+        <item>Рассказовское городское МО</item>
+        <item>Тамбовское городское МО</item>
+        <item>Тамбовское районное МО</item>
+    </string-array>
+
+    <string-array name = "mestOtdTver">
+        <item>Не выбрано</item>
+        <item>МО в г. Ржев</item>
+        <item>МО в Г. Тверь</item>
+        <item>ПО Заволжского района в составе МО г.Твери</item>
+        <item>ПО Калининского района г.Твери</item>
+        <item>ПО Московского района в составе МО г.Твери</item>
+        <item>ПО Пролетарского района в составе МО г.Твери</item>
+        <item>ПО Центрального района в составе МО г.Твери</item>
+    </string-array>
+
+    <string-array name = "mestOtdTomsk">
+        <item>Не выбрано</item>
+        <item>Городское МО в г.Томске</item>
+        <item>МО в г. Асино</item>
+        <item>МО в г.Колпашево</item>
+        <item>МО в г.Северске</item>
+        <item>МО Пудинское, г. Кедровый</item>
+    </string-array>
+
+    <string-array name = "mestOtdTulsk">
+        <item>Не выбрано</item>
+        <item>Северо-Восточное ПО</item>
+        <item>Суворовское ПО</item>
+        <item>Юго-Западное ПО</item>
+    </string-array>
+
+    <string-array name = "mestOtdTumen">
+        <item>Не выбрано</item>
+        <item>МО в Ленинском АО</item>
+        <item>МО в Калининском АО</item>
+        <item>МО в Центральном АО</item>
+        <item>МО в г. Ялуторовск</item>
+        <item>МО в Тюменском районе</item>
+    </string-array>
+
+    <string-array name = "mestOtdUlyan">
+        <item>Не выбрано</item>
+        <item>На учёте при РО</item>
+    </string-array>
+
+    <string-array name = "mestOtdChelyab">
+        <item>Не выбрано</item>
+        <item>Златоустовское местное отделение</item>
+        <item>Копейское местное отделение</item>
+        <item>Чебаркульское местное отделение</item>
+        <item>Челябинское местное отделение</item>
+        <item>Магнитогорское первичное отделение</item>
+        <item>Миасское первичное отделение</item>
+        <item>Троицкое первичное отделение</item>
+    </string-array>
+
+    <string-array name = "mestOtdZabaik">
+        <item>Не выбрано</item>
+        <item>МО в Ингодинском р-не</item>
+        <item>МО в Центральном р-не</item>
+        <item>МО в Черновском р-не</item>
+        <item>МО г. Борзя и Борзинского р-на</item>
+        <item>ПО в Дульдургинском р-не</item>
+        <item>ПО в Железнодорожном р-не</item>
+        <item>ПО г.Нерчинск</item>
+        <item>ПО Читинский р-н</item>
+    </string-array>
+
+    <string-array name = "mestOtdYarosl">
+        <item>Не выбрано</item>
+        <item>На учёте при РО</item>
+    </string-array>
+
+    <string-array name = "mestOtdMoscow">
+        <item>Не выбрано</item>
+        <item>МО ВАО</item>
+        <item>МО ЗАО</item>
+        <item>МО САО</item>
+        <item>МО СВАО</item>
+        <item>МО СЗАО</item>
+        <item>МО ЦАО</item>
+        <item>МО ЮАО</item>
+        <item>МО ЮВАО</item>
+        <item>МО ЮЗАО</item>
+        <item>ПО ЗАО-1</item>
+        <item>ПО ЗАО-2</item>
+        <item>ПО Зеленоград</item>
+        <item>ПО Измайловское</item>
+        <item>ПО Новомосковское</item>
+        <item>ПО Перовское</item>
+        <item>ПО САО-1</item>
+        <item>ПО САО-2</item>
+        <item>ПО СВАО-1</item>
+        <item>ПО СВАО-2</item>
+        <item>ПО СЗАО-1</item>
+        <item>ПО СЗАО-2</item>
+        <item>ПО ЦАО-1</item>
+        <item>ПО ЦАО-2</item>
+        <item>ПО ЦАО-3</item>
+        <item>ПО ЮАО-1</item>
+        <item>ПО ЮАО-2</item>
+        <item>ПО ЮВАО-1</item>
+        <item>ПО ЮВАО-2</item>
+        <item>ПО ЮЗАО-1</item>
+        <item>ПО ЮЗАО-2</item>
+    </string-array>
+
+    <string-array name = "mestOtdSpb">
+        <item>Не выбрано</item>
+        <item>Адмиралтейское</item>
+        <item>Василеостровское</item>
+        <item>Выборгское</item>
+        <item>Калининское</item>
+        <item>Кировское</item>
+        <item>Колпинское</item>
+        <item>Красногвардейское</item>
+        <item>Московское</item>
+        <item>Невское</item>
+        <item>Петроградское</item>
+        <item>Приморское</item>
+        <item>Пушкинское</item>
+        <item>Фрунзенское</item>
+        <item>Центральное</item>
+        <item>Юго-Западное межрайонное</item>
+    </string-array>
+
+    <string-array name = "mestOtdHantyMans">
+        <item>Не выбрано</item>
+        <item>На учёте при РО</item>
+    </string-array>
+
+
+    </resources>

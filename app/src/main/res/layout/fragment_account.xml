@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AccountFragment"
+    android:layout_centerHorizontal="true"
+    >
+
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="93dp"
+        android:id="@+id/icon"
+        android:layout_height="120dp"
+        android:src="@drawable/kreugl"
+
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"/>
+
+
+    <TableLayout
+        android:layout_below="@+id/icon"
+        android:layout_width="350dp"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content">
+
+
+
+
+
+    <TextView
+        android:id="@+id/name_surname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/boldsp"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:textColor="?attr/tC"
+        android:textStyle="bold"
+        android:textSize="24sp" />
+
+
+
+
+    <TextView
+        android:id="@+id/rasp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/boldsp"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:textColor="?attr/tC"
+        android:textSize="16sp"
+        />
+
+
+
+
+<RelativeLayout
+    android:id="@+id/relative1"
+    android:layout_width="wrap_content"
+    android:layout_height="51dp"
+    android:layout_marginTop="25dp"
+    android:textAlignment="center"
+
+    android:background="@drawable/shape_non"
+    >
+
+    <TextView
+        android:id="@+id/pol"
+        style="@style/texts_style_account_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+
+        android:paddingLeft="15dp"
+        android:text="@string/polPred"
+        android:textAlignment="textStart"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/ed1"
+        style="@style/texts_style_hint_acc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="15dp"
+        android:layout_toRightOf="@+id/pol"
+        android:backgroundTint="@color/gray_shape_none"
+        android:enabled="false"
+        android:fontFamily="@font/boldsp"
+        android:gravity="center|left"
+        android:hint="@string/non"
+        android:maxLength="20"
+        android:maxLines="1"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textColor="@color/gray_text" />
+</RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative2"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:layout_marginTop="25dp"
+        android:textAlignment="center"
+
+        android:background="@drawable/shape_non"
+        >
+
+        <TextView
+            android:id="@+id/polx"
+            style="@style/texts_style_account_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:paddingLeft="15dp"
+            android:text="@string/religiya"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/ed2"
+            style="@style/texts_style_hint_acc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:layout_toRightOf="@+id/polx"
+            android:maxLength="13"
+            android:backgroundTint="@color/gray_shape_none"
+            android:enabled="false"
+            android:fontFamily="@font/boldsp"
+            android:gravity="center|left"
+            android:hint="@string/non"
+            android:maxLines="1"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textColor="@color/gray_text" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relative3"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:layout_marginTop="25dp"
+        android:textAlignment="center"
+
+        android:background="@drawable/shape_non"
+        >
+
+        <TextView
+            android:id="@+id/pola"
+            style="@style/texts_style_account_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:paddingLeft="15dp"
+            android:text="@string/mainInLife"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/ed3"
+            style="@style/texts_style_hint_acc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:scrollHorizontally="true"
+            android:maxLength="10"
+            android:layout_marginRight="15dp"
+            android:layout_toRightOf="@+id/pola"
+            android:backgroundTint="@color/gray_shape_none"
+            android:enabled="false"
+            android:fontFamily="@font/boldsp"
+            android:gravity="center|left"
+            android:hint="@string/non"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/gray_text" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative4"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:layout_marginTop="25dp"
+        android:textAlignment="center"
+
+        android:background="@drawable/shape_non"
+        >
+
+        <TextView
+            android:id="@+id/polq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/mainInPeople"
+            android:textAlignment="textStart"
+            style="@style/texts_style_account_save"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:paddingLeft="15dp"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/ed4"
+            style="@style/texts_style_hint_acc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:maxLength="10"
+            android:layout_marginRight="15dp"
+            android:layout_toRightOf="@+id/polq"
+            android:scrollHorizontally="true"
+            android:backgroundTint="@color/gray_shape_none"
+            android:enabled="false"
+            android:fontFamily="@font/boldsp"
+            android:gravity="center|left"
+            android:hint="@string/non"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/gray_text" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relative5"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:layout_marginTop="25dp"
+        android:textAlignment="center"
+
+        android:background="@drawable/shape_non"
+        >
+
+        <TextView
+            android:id="@+id/polw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:paddingLeft="15dp"
+            android:text="@string/Vdox"
+            android:textAlignment="textStart"
+            style="@style/texts_style_account_save"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/ed5"
+            style="@style/texts_style_hint_acc"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+
+            android:scrollHorizontally="true"
+            android:maxLength="15"
+            android:layout_toRightOf="@+id/polw"
+            android:backgroundTint="@color/gray_shape_none"
+            android:enabled="false"
+            android:fontFamily="@font/boldsp"
+            android:gravity="center|left"
+            android:hint="@string/non"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/gray_text" />
+    </RelativeLayout>
+
+</TableLayout>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        android:id="@+id/progress_bar"
+        style="@style/SpinKitView.Large.FadingCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        app:SpinKit_Color="@color/green" />
+</RelativeLayout>

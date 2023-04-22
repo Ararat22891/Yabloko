@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Quick Sort"
+        android:paddingVertical="15dp"
+        android:singleLine="true"
+        android:paddingLeft="15dp"
+        android:fontFamily="@font/boldsp"
+        android:textColor="@color/red"
+        android:textSize="20sp" />
