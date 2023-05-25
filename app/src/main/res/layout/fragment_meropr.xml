@@ -3,94 +3,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context=".MeroprFragment">
-<TableLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-   android:layout_marginLeft="50dp"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="?actionBarSize">
-    <TextView
-        android:id="@+id/cal"
-        android:layout_marginTop="5dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/boldsp"
-        android:textColor="?attr/tC"
-        android:textAlignment="center"
-        android:textSize="26dp"
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="50dp"
         android:layout_centerHorizontal="true"
-        android:text="@string/calendar"
-        />
+        android:layout_marginTop="?actionBarSize">
+        <Spinner
+            android:id="@+id/partyMemberSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/tC"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/white"
+             />
 
-    <TextView
-        android:id="@+id/calop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/cal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/boldsp"
-        android:text="@string/calendar_opis"
-        android:textAlignment="center"
-        android:textColor="?attr/tC"
-        android:textSize="18dp" />
+        <EditText
+            android:id="@+id/messageEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/partyMemberSpinner"
+            android:layout_marginTop="10dp"
+            android:textColor="?attr/tC"
+            android:hint="Напишите ваше обращение..."
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:minLines="5" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:backgroundTint="@color/red"
-        android:fontFamily="@font/boldsp"
-        android:layout_marginTop="15dp"
-        android:textColor="@color/white"
-        android:text="@string/open"
-        android:onClick="onClick"
-        android:textAllCaps="false"
-        android:textSize="18sp"
-        />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/tC"
+            android:layout_below="@id/messageEditText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Отправить" />
+    </TableLayout>
 
 
 
-    <TextView
-
-        android:layout_marginTop="65dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/boldsp"
-        android:textColor="?attr/tC"
-        android:textAlignment="center"
-        android:textSize="26dp"
-        android:layout_centerHorizontal="true"
-        android:text="@string/transl"
-        />
-
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/cal"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:fontFamily="@font/boldsp"
-        android:text="@string/transl_opis"
-        android:textAlignment="center"
-        android:textColor="?attr/tC"
-        android:textSize="18dp" />
-
-    <Button
-
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:backgroundTint="@color/red"
-        android:fontFamily="@font/boldsp"
-        android:layout_marginTop="15dp"
-        android:textColor="@color/white"
-        android:text="@string/open"
-        android:textAllCaps="false"
-        android:textSize="18sp"
-        />
-
-</TableLayout>
 </RelativeLayout>

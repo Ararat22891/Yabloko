@@ -39,6 +39,7 @@
         android:textColor="?attr/tC"
         />
     <Button
+        android:id="@+id/don"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/red"
@@ -76,8 +77,8 @@
         android:layout_weight="1"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:drawableLeft="@drawable/sms"
-        android:text="@string/feedback"
+        android:drawableLeft="@drawable/galka"
+        android:text="Уведомления"
         android:backgroundTint="@color/red"
         android:textColor="@color/white"
         android:textAllCaps="false"
@@ -93,23 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"/>
 </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="5dp"
-        android:fontFamily="@font/boldsp"
-        android:text="@string/socseti"
-        android:textColor="?attr/tC"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/red"
-        android:layout_marginTop="5dp"
-        android:drawableLeft="@drawable/account_soc"
-        android:text="@string/acssInSoc"
-        style="@style/settings_buttons" />
+
 
     <TextView
         android:layout_width="wrap_content"

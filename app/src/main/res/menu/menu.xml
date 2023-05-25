@@ -10,8 +10,8 @@
             android:icon="@drawable/vector"
             />
         <item
-            android:title="Мероприятия"
-            android:icon="@drawable/calendar"
+            android:title="Обращения"
+            android:icon="@drawable/account_soc"
             android:enabled="true"
             app:showAsAction="always"
             android:id="@+id/merop"

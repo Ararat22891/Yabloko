@@ -28,6 +28,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.AbsListView;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton enter,search,settings;
     private TextView textView;
     private Toolbar toolbar;
+    Button donateButton;
     String USER = "user";
     private TextView nameAge,rasp, txt1,txt2,txt3,txt4,txt5;
     private EditText ed1,ed2,ed3,ed4,ed5;
@@ -100,6 +102,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
 
         if (savedInstanceState == null) {
             pushFragments("account", accountFragment);
@@ -339,6 +344,12 @@ private void saveData(){
         settings.setVisibility(View.GONE);
     }
 
+    public void onDonateClick(View v){
+        DonateFragment donateFragment = new DonateFragment();
+        pushFragments("donate", donateFragment);
+
+    }
+
     private void change_Fragment(Fragment fr , String tag){
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 
@@ -378,6 +389,7 @@ private void saveData(){
         Fragment enter = manager.findFragmentByTag("enter");
         Fragment merop = manager.findFragmentByTag("merop");
         Fragment mainPartys = manager.findFragmentByTag("mainParty");
+        Fragment donate = manager.findFragmentByTag("donate");
 
         if (accountFragment !=null)
             ft.hide(accountFragment);
@@ -395,6 +407,8 @@ private void saveData(){
             ft.hide(merop);
         if (mainPartys!=null)
             ft.hide(mainPartys);
+        if (donate!=null)
+            ft.hide(donate);
 
 
         if (tag == "account"){
@@ -402,7 +416,10 @@ private void saveData(){
                 ft.show(accountFragment);
         }
 
-
+        if (tag == "donate"){
+            if (donate != null)
+                ft.show(donate);
+        }
 
         if (tag == "news"){
             if (news != null)

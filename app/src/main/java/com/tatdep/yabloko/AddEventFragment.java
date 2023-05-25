@@ -1,9 +1,9 @@
 package com.tatdep.yabloko;
 
 import static android.app.Activity.RESULT_OK;
+import static android.text.format.DateFormat.format;
 
 import static com.google.android.material.internal.ViewUtils.hideKeyboard;
-import static okhttp3.internal.http.HttpDate.format;
 
 import android.content.Context;
 import android.content.Intent;
@@ -104,7 +104,8 @@ public class AddEventFragment extends Fragment {
                         return;
                     }
                     Format format = new SimpleDateFormat("dd-MM-yyyy HH-mm");
-                    String d = format(date);
+                    Date date1 = new Date();
+                    String d = date.toString();
                     pathDb = getSplittedPathChild.getSplittedPathChild(generatorWord.generateRandomWord(15).toString());
 
                     dbuser.addListenerForSingleValueEvent(new ValueEventListener() {
