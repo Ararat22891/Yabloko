@@ -345,8 +345,8 @@ private void saveData(){
     }
 
     public void onDonateClick(View v){
-        DonateFragment donateFragment = new DonateFragment();
-        pushFragments("donate", donateFragment);
+        PaymentFragment paymentFragment = new PaymentFragment();
+        pushFragments("donate", paymentFragment);
 
     }
 

@@ -56,44 +56,8 @@
         style="@style/settings_buttons" />
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="5dp"
-        android:fontFamily="@font/boldsp"
-        android:text="@string/uved"
-        android:textColor="?attr/tC"
-        />
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/withToggle"
-    android:background="@color/red">
-    <Button
-        android:layout_width="wrap_content"
-        android:enabled="false"
-        android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:drawableLeft="@drawable/galka"
-        android:text="Уведомления"
-        android:backgroundTint="@color/red"
-        android:textColor="@color/white"
-        android:textAllCaps="false"
-        android:gravity="left|center"
-        android:fontFamily="@font/boldsp"/>
-    <com.bitvale.switcher.SwitcherX
-        android:layout_width="wrap_content"
-        android:id="@+id/toggle"
-        android:layout_marginRight="15dp"
-        app:switcher_on_color="@color/green"
-        app:switcher_off_color="@color/gray"
-        android:layout_gravity="center|right"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"/>
-</LinearLayout>
+
+
 
 
     <TextView
