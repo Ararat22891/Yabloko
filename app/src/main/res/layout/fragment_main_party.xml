@@ -222,7 +222,7 @@
             android:id="@+id/gr_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Тест"
+            android:text="Отправить заявление"
             android:textColor="@color/white"
             android:fontFamily="@font/boldsp"
             android:textAllCaps="false"

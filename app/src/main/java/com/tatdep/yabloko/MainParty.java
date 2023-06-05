@@ -76,7 +76,6 @@ public class MainParty extends Fragment {
         String[] moscow = getResources().getStringArray(R.array.mestOtdMoscow);
         String[] kabard =  getResources().getStringArray(R.array.mestOtdKabard);
         String[] kaliningrad =  getResources().getStringArray(R.array.mestOtdKaliningr);
-        String[] amur = getResources().getStringArray(R.array.mestOtdAmur);
 
         setDataAdapter(regOtd,s);
         regOtd.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -442,24 +441,7 @@ public class MainParty extends Fragment {
 
 
     private void init(View view){
-        date_birth.addTextChangedListener(
-                new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable editable) {
-
-                    }
-                }
-        );
         fio = view.findViewById(R.id.fio);
         regOtd = view.findViewById(R.id.spinnerReg);
         mestnOtd = view.findViewById(R.id.spinnerOtd);

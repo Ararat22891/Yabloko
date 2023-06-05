@@ -1,0 +1,135 @@
+<!-- layout_appeal.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    android:background="@drawable/background_appeal"
+    android:padding="10dp">
+
+
+
+        <!-- Почта отправителя -->
+        <TextView
+            android:id="@+id/text_sender_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Почта отправителя: "
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+
+        <TextView
+            android:id="@+id/text_sender_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="sender@example.com"
+            android:textSize="18sp"
+            android:textColor="#000000" />
+
+
+        <!-- Тема обращения -->
+        <TextView
+            android:id="@+id/text_subject_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Тема обращения: "
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/text_appeal_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Тема обращения"
+            android:textSize="18sp"
+            android:layout_marginTop="3dp"
+            android:textColor="#000000" />
+
+
+        <!-- Статус -->
+        <TextView
+            android:id="@+id/text_status_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Статус: "
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/text_appeal_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Статус обращения"
+            android:textSize="18sp"
+            android:layout_marginTop="3dp"
+            android:textColor="#000000" />
+
+    <LinearLayout
+        android:id="@+id/expandable_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="8dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/green" />
+
+        <!-- Сообщение пользователя -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+           android:textStyle="bold"
+            android:text="Сообщение от пользователя"
+            android:textSize="18sp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/text_user_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:text="Сообщение от пользователя"
+            android:textSize="18sp"
+            android:textColor="#000000" />
+
+        <!-- Редактируемый текст -->
+        <EditText
+            android:id="@+id/edit_reply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Введите ответ"
+            android:textColorHint="@color/gray"
+            android:maxLines="5"
+            android:minLines="1"
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:focusable="true"
+            android:background="@drawable/edittext_background"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Кнопка отправки -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_send_reply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Отправить"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_green"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

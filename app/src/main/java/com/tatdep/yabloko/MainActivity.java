@@ -59,6 +59,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 import com.tatdep.yabloko.cods.Accounts_Data;
+import com.tatdep.yabloko.cods.EmailSender;
 import com.tatdep.yabloko.cods.User;
 import com.tatdep.yabloko.cods.autosave;
 import com.tatdep.yabloko.cods.getSplittedPathChild;
@@ -66,6 +67,7 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageActivity;
 
 import java.util.Map;
+import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -78,17 +80,20 @@ public class MainActivity extends AppCompatActivity {
     MeroprFragment meroprFragment = new MeroprFragment();
 
 
+
     NewsFragment newsFragment = new NewsFragment();
     EnterPartyFragment enterPartyFragment = new EnterPartyFragment();
     AddEventFragment addEventFragment = new AddEventFragment();
     MainParty mainParty = new MainParty();
     Calenarragment calendar = new Calenarragment();
     SettingsFragment settingsFragment = new SettingsFragment();
+    AppealReadFragment appealReadFragment = new AppealReadFragment();
 
     private MenuItem menuItem;
     private ImageButton enter,search,settings;
     private TextView textView;
     private Toolbar toolbar;
+    private  boolean isPart;
     Button donateButton;
     String USER = "user";
     private TextView nameAge,rasp, txt1,txt2,txt3,txt4,txt5;
@@ -102,13 +107,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
-
         if (savedInstanceState == null) {
+            meroprFragment.setContext(MainActivity.this);
             pushFragments("account", accountFragment);
             pushFragments("news", newsFragment);
+            pushFragments("appealReadFragment", appealReadFragment);
             pushFragments("merop",meroprFragment);
             pushFragments("addEventFragment", addEventFragment);
             pushFragments("enter", enterPartyFragment);
@@ -118,6 +121,27 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         init();
+
+        getSplittedPathChild pC = new getSplittedPathChild();
+        DatabaseReference db;
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String splittedPathChild = pC.getSplittedPathChild(user.getEmail());
+
+        db = FirebaseDatabase.getInstance().getReference("user").child(splittedPathChild).child("acc").child("dolz").getRef();
+        db.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String chlenPart = snapshot.getValue(String.class);
+                isPart = Objects.equals(chlenPart, "Член партии");
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         textView = findViewById(R.id.textView8);
 
@@ -152,10 +176,12 @@ public class MainActivity extends AppCompatActivity {
                     search.setImageResource(R.drawable.ic_baseline_edit_24);
                     break;
                 case R.id.merop:
-                    textView.setText("Мероприятия");
-//                    change_Fragment(meroprFragment, "merop");
-
-                    pushFragments("merop", meroprFragment);
+                    textView.setText("Обращения");
+                    if (isPart) {
+                        pushFragments("appealReadFragment", appealReadFragment);
+                    } else {
+                        pushFragments("merop", meroprFragment);
+                    }
                     settings.setVisibility(View.GONE);
                     enter.setVisibility(View.GONE);
                     search.setVisibility(View.GONE);
@@ -163,9 +189,15 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.news:
 //                    change_Fragment(newsFragment, "news");
                     textView.setText("Новости");
+
+
                     pushFragments("news", newsFragment);
+                    if (isPart) {
+                        enter.setVisibility(View.VISIBLE);
+                    } else {
+                        enter.setVisibility(View.GONE);
+                    }
                     search.setImageResource(R.drawable.search);
-                    enter.setVisibility(View.VISIBLE);
                     settings.setVisibility(View.GONE);
                     search.setVisibility(View.GONE);
                     //search.setVisibility(View.VISIBLE);
@@ -382,6 +414,7 @@ private void saveData(){
         }
 
         Fragment accountFragment = manager.findFragmentByTag("account");
+        Fragment appealReadFragment = manager.findFragmentByTag("appealReadFragment");
         Fragment news = manager.findFragmentByTag("news");
         Fragment settings = manager.findFragmentByTag("settings");
         Fragment calendar = manager.findFragmentByTag("calendar");
@@ -393,6 +426,8 @@ private void saveData(){
 
         if (accountFragment !=null)
             ft.hide(accountFragment);
+        if(appealReadFragment != null)
+            ft.hide(appealReadFragment);
         if (news !=null)
             ft.hide(news);
         if (settings!=null)
@@ -414,6 +449,11 @@ private void saveData(){
         if (tag == "account"){
             if (accountFragment != null)
                 ft.show(accountFragment);
+        }
+
+        if (tag == "appealReadFragment"){
+            if (appealReadFragment != null)
+                ft.show(appealReadFragment);
         }
 
         if (tag == "donate"){

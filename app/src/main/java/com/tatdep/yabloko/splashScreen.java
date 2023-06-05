@@ -58,7 +58,7 @@ private FirebaseAuth firebaseAuth;
                 if (firebaseUser!=null) {
                     if(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).isEmailVerified()){
                         assert firebaseUser!=null;
-                        Intent mainIntent = new Intent(splashScreen.this, MainActivity.class);
+                        Intent mainIntent = new Intent(splashScreen.this, AdminMainModeratorsActivity.class);
                         splashScreen.this.startActivity(mainIntent);
 
                         splashScreen.this.finish();

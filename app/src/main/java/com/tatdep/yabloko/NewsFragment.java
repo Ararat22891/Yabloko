@@ -11,10 +11,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TableLayout;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,11 +31,13 @@ import com.tatdep.yabloko.cods.NewsDataAddList;
 import com.tatdep.yabloko.cods.OnDetectScrollListener;
 
 import com.tatdep.yabloko.cods.getNormData;
+import com.tatdep.yabloko.cods.getSplittedPathChild;
 import com.tatdep.yabloko.cods.post_Data;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Objects;
 
 import okhttp3.internal.cache.DiskLruCache;
 
@@ -44,7 +49,7 @@ public class NewsFragment extends Fragment {
     private TableLayout tb;
     ArrayList<NewsDataAddList> arrayList;
     private newsAdapterListView list;
-    private boolean isHiden = false;
+    private boolean isPart = false;
     MainActivity mainActivity;
 
 
@@ -97,6 +102,29 @@ public class NewsFragment extends Fragment {
         list = new newsAdapterListView(getActivity(), arrayList);
         listView = view.findViewById(R.id.list_view);
         mainActivity = (MainActivity)getActivity();
+
+        getSplittedPathChild pC = new getSplittedPathChild();
+        DatabaseReference db;
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String splittedPathChild = pC.getSplittedPathChild(user.getEmail());
+
+        db = FirebaseDatabase.getInstance().getReference("user").child(splittedPathChild).child("acc").child("dolz").getRef();
+        db.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String chlenPart = snapshot.getValue(String.class);
+                isPart = Objects.equals(chlenPart, "Член партии");
+                ImageButton  enter= mainActivity.findViewById(R.id.imageButton4);
+                enter.setVisibility(isPart?View.VISIBLE: View.GONE);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
     private void addDataOnListView(){

@@ -11,35 +11,61 @@
         android:layout_marginLeft="50dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="?actionBarSize">
+
         <Spinner
-            android:id="@+id/partyMemberSpinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/spinnerReg"
+            android:gravity="left|center"
+            android:singleLine="true"
+            android:dropDownVerticalOffset="55dp"
+            android:background="@drawable/spinner_bg"
+            android:layout_width="match_parent"
             android:textColor="?attr/tC"
-            android:layout_centerHorizontal="true"
-            android:backgroundTint="@color/white"
-             />
+            android:layout_height="wrap_content"
+            />
+
+        <Spinner
+            android:id="@+id/spinnerAppealsType"
+            android:gravity="left|center"
+            android:layout_marginTop="20dp"
+            android:singleLine="true"
+            android:dropDownVerticalOffset="55dp"
+            android:background="@drawable/spinner_bg"
+            android:layout_width="match_parent"
+            android:textColor="?attr/tC"
+            android:layout_height="wrap_content"
+            />
 
         <EditText
-            android:id="@+id/messageEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/partyMemberSpinner"
-            android:layout_marginTop="10dp"
-            android:textColor="?attr/tC"
-            android:hint="Напишите ваше обращение..."
-            android:inputType="textMultiLine"
-            android:maxLines="5"
-            android:minLines="5" />
-
-        <Button
+            android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="?attr/tC"
-            android:layout_below="@id/messageEditText"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="Отправить" />
+            android:textColor="@color/red"
+            android:textSize="20dp"
+            android:hint="Введите текст"
+            android:inputType="textMultiLine"
+            android:lines="10"
+            android:textAlignment="gravity"
+            android:gravity="left"
+            android:padding="10dp"
+            android:textColorHint="@color/gray"
+            android:theme="@style/textEditHandleGreen"
+            android:layout_marginVertical="20dp"
+            android:background="@drawable/edit_text_zayavka"
+            />
+
+        <Button
+            android:id="@+id/gr_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Отправить обращение"
+            android:textColor="@color/white"
+            android:fontFamily="@font/boldsp"
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:paddingVertical="10dp"
+            android:backgroundTint="@color/green"
+            />
+
     </TableLayout>
 
 
