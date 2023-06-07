@@ -28,6 +28,8 @@ public class AppealAdapterRecyclerView extends RecyclerView.Adapter<AppealAdapte
     private ArrayList<Appeal> appeals;
     private Context context;
     Appeal currentAppeal;
+    public String btn_name = "Отправить";
+    public boolean isDeleting = false;
     private ItemClickListener itemClickListener;
     private DatabaseReference databaseReference;
     private StatusUpdateListener statusUpdateListener;
@@ -63,11 +65,18 @@ public class AppealAdapterRecyclerView extends RecyclerView.Adapter<AppealAdapte
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
          currentAppeal = appeals.get(position);
+
+        if (isDeleting) {
+            holder.edtReplay.setVisibility(View.GONE);
+        } else {
+            holder.edtReplay.setVisibility(View.VISIBLE);
+        }
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         holder.senderEmail.setText(currentAppeal.getSenderEmail());
         holder.appealSubject.setText(currentAppeal.getAppealType());
         holder.appealStatus.setText(currentAppeal.getStatus());
         holder.userMessage.setText(currentAppeal.getMessage());
+        holder.btn.setText(btn_name);
         getSplittedPathChild pC = new getSplittedPathChild();
 
         String splittedPathChild = pC.getSplittedPathChild(user.getEmail());
@@ -83,99 +92,147 @@ public class AppealAdapterRecyclerView extends RecyclerView.Adapter<AppealAdapte
                     holder.expandableContent.setVisibility(View.VISIBLE);
                 }
 
-                db.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for (DataSnapshot appealSnapshot : dataSnapshot.getChildren()) {
-                            Appeal updatedAppeal = appealSnapshot.getValue(Appeal.class);
-                            if (updatedAppeal != null && updatedAppeal.equals(currentAppeal)) {
-                                if (Objects.equals(updatedAppeal.getStatus(), "Прочитано")){
-                                    return;
+                if (!isDeleting){
+                    db.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            for (DataSnapshot appealSnapshot : dataSnapshot.getChildren()) {
+                                Appeal updatedAppeal = appealSnapshot.getValue(Appeal.class);
+                                if (updatedAppeal != null && updatedAppeal.equals(currentAppeal)) {
+                                    if (Objects.equals(updatedAppeal.getStatus(), "Прочитано")){
+                                        return;
+                                    }
+
+                                    if(Objects.equals(updatedAppeal.getStatus(), "Отвечено")){
+                                        return;
+                                    }
+                                    currentAppeal = updatedAppeal;
+
+                                    // Изменение статуса обращения
+                                    currentAppeal.setStatus("Прочитано");
+
+                                    // Обновление только для текущей позиции
+                                    notifyItemChanged(holder.getAdapterPosition());
+
+                                    // Обновление статуса в Firebase
+                                    DatabaseReference appealRef = appealSnapshot.getRef();
+                                    appealRef.child("status").setValue(currentAppeal.getStatus());
+
+                                    break; // Прерываем цикл, так как элемент уже найден
                                 }
-
-                                if(Objects.equals(updatedAppeal.getStatus(), "Отвечено")){
-                                    return;
-                                }
-                                currentAppeal = updatedAppeal;
-
-                                // Изменение статуса обращения
-                                currentAppeal.setStatus("Прочитано");
-
-                                // Обновление только для текущей позиции
-                                notifyItemChanged(holder.getAdapterPosition());
-
-                                // Обновление статуса в Firebase
-                                DatabaseReference appealRef = appealSnapshot.getRef();
-                                appealRef.child("status").setValue(currentAppeal.getStatus());
-
-                                break; // Прерываем цикл, так как элемент уже найден
                             }
+
                         }
 
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        // Обработка ошибки
-                    }
-                });
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            // Обработка ошибки
+                        }
+                    });
+                }
             }
         });
         holder.btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                db.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for (DataSnapshot appealSnapshot : dataSnapshot.getChildren()) {
-                            Appeal updatedAppeal = appealSnapshot.getValue(Appeal.class);
-                            if (updatedAppeal != null && updatedAppeal.equals(currentAppeal)) {
 
-                                currentAppeal = updatedAppeal;
+                if(!isDeleting) {
+                    db.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            for (DataSnapshot appealSnapshot : dataSnapshot.getChildren()) {
+                                Appeal updatedAppeal = appealSnapshot.getValue(Appeal.class);
+                                if (updatedAppeal != null && updatedAppeal.equals(currentAppeal)) {
 
-                                // Изменение статуса обращения
-                                currentAppeal.setStatus("Отвечно"); // Замените "Новый статус" на нужное значение
+                                    currentAppeal = updatedAppeal;
 
-                                // Обновление только для текущей позиции
-                                notifyItemChanged(holder.getAdapterPosition());
+                                    // Изменение статуса обращения
+                                    currentAppeal.setStatus("Отвечено"); // Замените "Новый статус" на нужное значение
 
-                                // Обновление статуса в Firebase
-                                DatabaseReference appealRef = appealSnapshot.getRef();
-                                appealRef.child("status").setValue(currentAppeal.getStatus());
+                                    // Обновление только для текущей позиции
+                                    notifyItemChanged(holder.getAdapterPosition());
 
-                                String recipient = currentAppeal.getSenderEmail(); // Адрес получателя
-                                String subject = "Ответ по вашему обращению по теме \"" + currentAppeal.getAppealType()+"\""; // Тема письма
-                                String body =  holder.edtReplay.getText().toString();
+                                    // Обновление статуса в Firebase
+                                    DatabaseReference appealRef = appealSnapshot.getRef();
+                                    appealRef.removeValue();
 
-                                String htmlBody = "<html><body>" +
-                                        "<table>" +
-                                        "<tr>" +
-                                        "<td style=\"vertical-align: top; padding-right: 10px;\">" +
-                                        "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_%D0%AF%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE_%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BF%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D1%8B%D0%B9.svg/1024px-%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_%D0%AF%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE_%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BF%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D1%8B%D0%B9.svg.png\" style=\"width: 50px; height: 50px;\">" +
-                                        "</td>" +
-                                        "<td>" +
-                                        "<h1>Привет!</h1>" +
-                                        "<p>Ниже приведен ответ на ваше сообщение:</p>" +
-                                        "<p style=\"font-size: 18px;\"><strong>" + body + "</strong></p>" +
-                                        "<p>Ваше приложение</p>" +
-                                        "</td>" +
-                                        "</tr>" +
-                                        "</table>" +
-                                        "</body></html>";
+                                    String recipient = currentAppeal.getSenderEmail(); // Адрес получателя
+                                    String subject = "Ответ по вашему обращению по теме \"" + currentAppeal.getAppealType() + "\""; // Тема письма
+                                    String body = holder.edtReplay.getText().toString();
 
-                                EmailSender.sendEmail(recipient, subject, htmlBody);
+                                    String htmlBody = "<html><body>" +
+                                            "<table>" +
+                                            "<tr>" +
+                                            "<td style=\"vertical-align: top; padding-right: 10px;\">" +
+                                            "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_%D0%AF%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE_%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BF%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D1%8B%D0%B9.svg/1024px-%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_%D0%AF%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE_%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BF%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D1%8B%D0%B9.svg.png\" style=\"width: 50px; height: 50px;\">" +
+                                            "</td>" +
+                                            "<td>" +
+                                            "<h1>Привет!</h1>" +
+                                            "<p>Ниже приведен ответ на ваше сообщение:</p>" +
+                                            "<p style=\"font-size: 18px;\"><strong>" + body + "</strong></p>" +
+                                            "<p>Партия Яблоко</p>" +
+                                            "</td>" +
+                                            "</tr>" +
+                                            "</table>" +
+                                            "</body></html>";
 
-                                break; // Прерываем цикл, так как элемент уже найден
+                                    EmailSender.sendEmail(recipient, subject, htmlBody);
+
+                                    return; // Прерываем цикл, так как элемент уже найден
+                                }
+                            }
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            // Обработка ошибки
+                        }
+                    });
+                }
+                else {
+                    DatabaseReference db = FirebaseDatabase.getInstance().getReference("user").getRef();
+
+                    db.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            for(DataSnapshot appealSnapshot: snapshot.getChildren() ){
+                                getSplittedPathChild pC = new getSplittedPathChild();
+                                User user = appealSnapshot.getValue(User.class);
+                                if (user !=null) {
+                                    DatabaseReference ref =FirebaseDatabase.getInstance().getReference().child("user").child(pC.getSplittedPathChild(user.email)).child("appeals").getRef();
+                                    ref.addValueEventListener(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot childsnapshot) {
+                                            for (DataSnapshot child: childsnapshot.getChildren()){
+                                                Appeal acc = child.getValue(Appeal.class);
+                                                if (acc != null) {
+                                                    if (acc.equals(currentAppeal)) {
+                                                        currentAppeal = acc;
+                                                        DatabaseReference appealRef = child.getRef();
+                                                        appealRef.removeValue();
+                                                    }
+                                                }
+                                            }
+
+
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
+                                }
                             }
                         }
 
-                    }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        // Обработка ошибки
-                    }
-                });
+                        }
+                    });
+                }
             }
         });
     }

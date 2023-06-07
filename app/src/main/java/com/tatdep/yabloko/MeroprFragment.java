@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -34,6 +35,7 @@ import java.util.List;
 public class MeroprFragment extends Fragment {
 
     Spinner spinner, spinnerAppealsType;
+    private EditText mess;
     private Context context;
 
     private Button btn;
@@ -54,6 +56,7 @@ public class MeroprFragment extends Fragment {
     private void init(View v) {
         spinner = v.findViewById(R.id.spinnerReg);
         spinnerAppealsType = v.findViewById(R.id.spinnerAppealsType);
+        mess = v.findViewById(R.id.text);
         List<String> appeals = new ArrayList<>();
         appeals.add("Экономические вопросы");
         appeals.add("Социальные вопросы");
@@ -61,7 +64,7 @@ public class MeroprFragment extends Fragment {
         appeals.add("Экологические вопросы");
         ArrayAdapter<String> adapter = new ArrayAdapter<>(context, R.layout.spin, appeals);
         adapter.setDropDownViewResource(R.layout.spin_dropdown);
-        spinner.setAdapter(adapter);
+        spinnerAppealsType.setAdapter(adapter);
 
         btn = v.findViewById(R.id.gr_button);
         // Сохраняем контекст фрагмента в переменную
@@ -107,7 +110,7 @@ public class MeroprFragment extends Fragment {
 
                 String senderName = getSplittedPathChild.getSplittedPathChild(currentUser.getEmail()); // Имя отправителя (первая часть ФИО)
                 String senderEmail = currentUser.getEmail(); // Почта отправителя
-                String message = "Текст сообщения"; // Текст сообщения
+                String message = mess.getText().toString(); // Текст сообщения
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference usersRef = database.getReference("user");
@@ -121,16 +124,21 @@ public class MeroprFragment extends Fragment {
                             DatabaseReference userRef = accSnapshot.getRef().getParent(); // Получаем ссылку на родительский узел
                             Accounts_Data account = accSnapshot.child("acc").getValue(Accounts_Data.class);
 
-                            if (account != null && "Член партии".equals(account.dolz) && index == spinner.getSelectedItemPosition()) {
+                            if (account != null && "Член партии".equals(account.dolz) ) {
+                                if (index == spinner.getSelectedItemPosition()){
+                                    String userId = accSnapshot.getRef().getKey();
+                                    DatabaseReference appealsRef = userRef.child(userId).child("appeals").push();
+                                    Appeal newAppeal = new Appeal(senderName, spinnerAppealsType.getSelectedItem().toString(), senderEmail, message, "Новое");
 
-                                String userId = accSnapshot.getRef().getKey();
-                                DatabaseReference appealsRef = userRef.child(userId).child("appeals").push();
-                                Appeal newAppeal = new Appeal(senderName, spinner.getSelectedItem().toString(), senderEmail, message, "Новое");
+                                    appealsRef.setValue(newAppeal);
 
-                                appealsRef.setValue(newAppeal);
+                                }
+
+                                index++;
+
                             }
-                            index++;
                         }
+                        mess.getText().clear();
                     }
 
 

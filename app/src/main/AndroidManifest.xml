@@ -17,6 +17,18 @@
         android:theme="@style/Theme.Yabloko"
         tools:targetApi="31">
         <activity
+            android:name=".ModeratorZayavkiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AppealsClearActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ModeratorMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateModeratorsActivity"
+            android:exported="false" />
+        <activity
             android:name=".AdminMainModeratorsActivity"
             android:exported="false" />
         <activity

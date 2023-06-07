@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView listView;
     private TableLayout table;
     private CalendarView calendarView;
+
     MeroprFragment meroprFragment = new MeroprFragment();
 
 

@@ -35,6 +35,7 @@ public class AdminMainModeratorsActivity extends AppCompatActivity {
     ArrayList<Accounts_Data> arrayList;
     TextView emptyTextView;
     Button btn;
+    boolean isModers = false;
     private AccountsDataAdapterRecyclerView adapter;
 
     @Override
@@ -48,6 +49,9 @@ public class AdminMainModeratorsActivity extends AppCompatActivity {
     private void init(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         getSplittedPathChild pC = new getSplittedPathChild();
+
+        Bundle arguments = getIntent().getExtras();
+        isModers = (boolean) arguments.get("isModers");
 
         db = FirebaseDatabase.getInstance().getReference("user").getRef();
         arrayList = new ArrayList<>();
@@ -88,9 +92,17 @@ public class AdminMainModeratorsActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot childsnapshot) {
                             Accounts_Data acc = childsnapshot.getValue(Accounts_Data.class);
-                            assert acc != null;
-                            if (!acc.dolz.equals("Модератор"))
-                                arrayList.add(acc);
+                            if(acc!=null){
+                                if(isModers) {
+                                    if (acc.dolz.equals("Модератор"))
+                                        arrayList.add(acc);
+                                }
+                                else {
+                                    if (!acc.dolz.equals("Модератор"))
+                                        arrayList.add(acc);
+                                }
+                            }
+
                             adapter.notifyDataSetChanged();
 
                         }

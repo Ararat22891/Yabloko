@@ -71,8 +71,8 @@ public class AppealReadFragment extends Fragment {
                 }
                 for (DataSnapshot ds : snapshot.getChildren()) {
                     Appeal ps = ds.getValue(Appeal.class);
+                    assert ps != null;
                     if (!ps.getStatus().equals("Отвечено")) {
-                        assert ps != null;
                         arrayList.add(ps);
                     }
                 }

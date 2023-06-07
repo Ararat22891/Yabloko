@@ -1,6 +1,7 @@
 package com.tatdep.yabloko.cods;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class requestParty{
     public String regOtd, mestnOtd, fio, telNumber, sex, dateOfBirth, grazd,
@@ -60,5 +61,19 @@ public class requestParty{
         this.sex = sex;
         this.dateOfBirth = dateOfBirth;
         this.grazd = grazd;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        requestParty that = (requestParty) o;
+        return Objects.equals(regOtd, that.regOtd) && Objects.equals(mestnOtd, that.mestnOtd) && Objects.equals(fio, that.fio) && Objects.equals(telNumber, that.telNumber) && Objects.equals(sex, that.sex) && Objects.equals(dateOfBirth, that.dateOfBirth) && Objects.equals(grazd, that.grazd) && Objects.equals(photoUrl, that.photoUrl) && Objects.equals(paspSernumer, that.paspSernumer) && Objects.equals(datePassp, that.datePassp) && Objects.equals(whoPassp, that.whoPassp) && Objects.equals(socSet, that.socSet) && Objects.equals(subektDom, that.subektDom) && Objects.equals(nasPunktDom, that.nasPunktDom) && Objects.equals(streetDom, that.streetDom) && Objects.equals(homeDom, that.homeDom) && Objects.equals(kvartDom, that.kvartDom) && Objects.equals(subekt, that.subekt) && Objects.equals(nasPunkt, that.nasPunkt) && Objects.equals(street, that.street) && Objects.equals(home, that.home) && Objects.equals(kvart, that.kvart) && Objects.equals(mestRaboty, that.mestRaboty) && Objects.equals(dolznPoMestuRab, that.dolznPoMestuRab) && Objects.equals(obraz, that.obraz) && Objects.equals(spec, that.spec) && Objects.equals(uchenStepen, that.uchenStepen) && Objects.equals(workInParty, that.workInParty) && Objects.equals(inayaRabota, that.inayaRabota) && Objects.equals(uchastVOrgVlast, that.uchastVOrgVlast) && Objects.equals(UchastVIzbCa, that.UchastVIzbCa) && Objects.equals(dopSved, that.dopSved);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(regOtd, mestnOtd, fio, telNumber, sex, dateOfBirth, grazd, photoUrl, paspSernumer, datePassp, whoPassp, socSet, subektDom, nasPunktDom, streetDom, homeDom, kvartDom, subekt, nasPunkt, street, home, kvart, mestRaboty, dolznPoMestuRab, obraz, spec, uchenStepen, workInParty, inayaRabota, uchastVOrgVlast, UchastVIzbCa, dopSved);
     }
 }

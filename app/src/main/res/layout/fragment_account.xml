@@ -21,262 +21,270 @@
         android:layout_marginTop="5dp"
         android:layout_centerHorizontal="true"/>
 
-
-    <TableLayout
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
         android:layout_below="@+id/icon"
-        android:layout_width="350dp"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:layout_height="wrap_content">
-
-
-
-
-
-    <TextView
-        android:id="@+id/name_surname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/boldsp"
-        android:layout_weight="1"
-        android:textAlignment="center"
-        android:textColor="?attr/tC"
-        android:textStyle="bold"
-        android:textSize="24sp" />
-
-
-
-
-    <TextView
-        android:id="@+id/rasp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/boldsp"
-        android:layout_weight="1"
-        android:textAlignment="center"
-        android:textColor="?attr/tC"
-        android:textSize="16sp"
-        />
-
-
-
-
-<RelativeLayout
-    android:id="@+id/relative1"
-    android:layout_width="wrap_content"
-    android:layout_height="51dp"
-    android:layout_marginTop="25dp"
-    android:textAlignment="center"
-
-    android:background="@drawable/shape_non"
-    >
-
-    <TextView
-        android:id="@+id/pol"
-        style="@style/texts_style_account_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-
-        android:layout_centerInParent="true"
-        android:paddingLeft="15dp"
-        android:text="@string/polPred"
-        android:textAlignment="textStart"
-        android:textSize="18sp" />
-
-    <EditText
-        android:id="@+id/ed1"
-        style="@style/texts_style_hint_acc"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginRight="15dp"
-        android:layout_toRightOf="@+id/pol"
-        android:backgroundTint="@color/gray_shape_none"
-        android:enabled="false"
-        android:fontFamily="@font/boldsp"
-        android:gravity="center|left"
-        android:hint="@string/non"
-        android:maxLength="20"
-        android:maxLines="1"
-        android:scrollHorizontally="true"
-        android:singleLine="true"
-        android:textColor="@color/gray_text" />
-</RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/relative2"
-        android:layout_width="wrap_content"
-        android:layout_height="51dp"
-        android:layout_marginTop="25dp"
-        android:textAlignment="center"
-
-        android:background="@drawable/shape_non"
         >
-
-        <TextView
-            android:id="@+id/polx"
-            style="@style/texts_style_account_save"
+        <TableLayout
             android:layout_width="wrap_content"
+            android:layout_marginHorizontal="20dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:paddingLeft="15dp"
-            android:text="@string/religiya"
-            android:textAlignment="textStart"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/ed2"
-            style="@style/texts_style_hint_acc"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginRight="15dp"
-            android:layout_toRightOf="@+id/polx"
-            android:maxLength="13"
-            android:backgroundTint="@color/gray_shape_none"
-            android:enabled="false"
-            android:fontFamily="@font/boldsp"
-            android:gravity="center|left"
-            android:hint="@string/non"
-            android:maxLines="1"
-            android:scrollHorizontally="true"
-            android:singleLine="true"
-            android:textColor="@color/gray_text" />
-    </RelativeLayout>
+            android:layout_centerInParent="true">
 
 
-    <RelativeLayout
-        android:id="@+id/relative3"
-        android:layout_width="wrap_content"
-        android:layout_height="51dp"
-        android:layout_marginTop="25dp"
-        android:textAlignment="center"
-
-        android:background="@drawable/shape_non"
-        >
-
-        <TextView
-            android:id="@+id/pola"
-            style="@style/texts_style_account_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:paddingLeft="15dp"
-            android:text="@string/mainInLife"
-            android:textAlignment="textStart"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/ed3"
-            style="@style/texts_style_hint_acc"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:scrollHorizontally="true"
-            android:maxLength="10"
-            android:layout_marginRight="15dp"
-            android:layout_toRightOf="@+id/pola"
-            android:backgroundTint="@color/gray_shape_none"
-            android:enabled="false"
-            android:fontFamily="@font/boldsp"
-            android:gravity="center|left"
-            android:hint="@string/non"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:textColor="@color/gray_text" />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/relative4"
-        android:layout_width="wrap_content"
-        android:layout_height="51dp"
-        android:layout_marginTop="25dp"
-        android:textAlignment="center"
-
-        android:background="@drawable/shape_non"
-        >
-
-        <TextView
-            android:id="@+id/polq"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="@string/mainInPeople"
-            android:textAlignment="textStart"
-            style="@style/texts_style_account_save"
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:paddingLeft="15dp"
-            android:textSize="18sp" />
-
-        <EditText
-            android:id="@+id/ed4"
-            style="@style/texts_style_hint_acc"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:maxLength="10"
-            android:layout_marginRight="15dp"
-            android:layout_toRightOf="@+id/polq"
-            android:scrollHorizontally="true"
-            android:backgroundTint="@color/gray_shape_none"
-            android:enabled="false"
-            android:fontFamily="@font/boldsp"
-            android:gravity="center|left"
-            android:hint="@string/non"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:textColor="@color/gray_text" />
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/name_surname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/boldsp"
+                android:textAlignment="center"
+                android:textColor="?attr/tC"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
 
-    <RelativeLayout
-        android:id="@+id/relative5"
-        android:layout_width="wrap_content"
-        android:layout_height="51dp"
-        android:layout_marginTop="25dp"
-        android:textAlignment="center"
+            <TextView
+                android:id="@+id/rasp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/boldsp"
+                android:textAlignment="center"
+                android:textColor="?attr/tC"
+                android:textSize="16sp" />
 
-        android:background="@drawable/shape_non"
-        >
 
-        <TextView
-            android:id="@+id/polw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_centerInParent="true"
-            android:paddingLeft="15dp"
-            android:text="@string/Vdox"
-            android:textAlignment="textStart"
-            style="@style/texts_style_account_save"
-            android:textSize="18sp" />
+            <RelativeLayout
+                android:id="@+id/relative1"
+                android:layout_width="wrap_content"
+                android:layout_height="51dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/shape_non"
 
-        <EditText
-            android:id="@+id/ed5"
-            style="@style/texts_style_hint_acc"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginRight="15dp"
+                android:textAlignment="center">
 
-            android:scrollHorizontally="true"
-            android:maxLength="15"
-            android:layout_toRightOf="@+id/polw"
-            android:backgroundTint="@color/gray_shape_none"
-            android:enabled="false"
-            android:fontFamily="@font/boldsp"
-            android:gravity="center|left"
-            android:hint="@string/non"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:textColor="@color/gray_text" />
-    </RelativeLayout>
+                <TextView
+                    android:id="@+id/pol"
+                    style="@style/texts_style_account_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
 
-</TableLayout>
+                    android:layout_centerInParent="true"
+                    android:paddingLeft="15dp"
+                    android:text="@string/polPred"
+                    android:textAlignment="textStart"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/ed1"
+                    style="@style/texts_style_hint_acc"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_toRightOf="@+id/pol"
+                    android:backgroundTint="@color/gray_shape_none"
+                    android:enabled="false"
+                    android:fontFamily="@font/boldsp"
+                    android:gravity="center|left"
+                    android:hint="@string/non"
+                    android:maxLength="20"
+                    android:maxLines="1"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative2"
+                android:layout_width="wrap_content"
+                android:layout_height="51dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/shape_non"
+
+                android:textAlignment="center">
+
+                <TextView
+                    android:id="@+id/polx"
+                    style="@style/texts_style_account_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:paddingLeft="15dp"
+                    android:text="@string/religiya"
+                    android:textAlignment="textStart"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/ed2"
+                    style="@style/texts_style_hint_acc"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_toRightOf="@+id/polx"
+                    android:backgroundTint="@color/gray_shape_none"
+                    android:enabled="false"
+                    android:fontFamily="@font/boldsp"
+                    android:gravity="center|left"
+                    android:hint="@string/non"
+                    android:maxLength="13"
+                    android:maxLines="1"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_text" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relative3"
+                android:layout_width="wrap_content"
+                android:layout_height="51dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/shape_non"
+
+                android:textAlignment="center">
+
+                <TextView
+                    android:id="@+id/pola"
+                    style="@style/texts_style_account_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:paddingLeft="15dp"
+                    android:text="@string/mainInLife"
+                    android:textAlignment="textStart"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/ed3"
+                    style="@style/texts_style_hint_acc"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_toRightOf="@+id/pola"
+                    android:backgroundTint="@color/gray_shape_none"
+                    android:enabled="false"
+                    android:fontFamily="@font/boldsp"
+                    android:gravity="center|left"
+                    android:hint="@string/non"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_text" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative4"
+                android:layout_width="wrap_content"
+                android:layout_height="51dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/shape_non"
+
+                android:textAlignment="center">
+
+                <TextView
+                    android:id="@+id/polq"
+                    style="@style/texts_style_account_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_centerHorizontal="true"
+                    android:paddingLeft="15dp"
+                    android:text="@string/mainInPeople"
+                    android:textAlignment="textStart"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/ed4"
+                    style="@style/texts_style_hint_acc"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_toRightOf="@+id/polq"
+                    android:backgroundTint="@color/gray_shape_none"
+                    android:enabled="false"
+                    android:fontFamily="@font/boldsp"
+                    android:gravity="center|left"
+                    android:hint="@string/non"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_text" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relative5"
+                android:layout_width="wrap_content"
+                android:layout_height="51dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/shape_non"
+                android:textAlignment="center">
+
+                <TextView
+                    android:id="@+id/polw"
+                    style="@style/texts_style_account_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:paddingLeft="15dp"
+                    android:text="@string/Vdox"
+                    android:textAlignment="textStart"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/ed5"
+                    style="@style/texts_style_hint_acc"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+
+                    android:layout_marginRight="15dp"
+                    android:layout_toRightOf="@+id/polw"
+                    android:backgroundTint="@color/gray_shape_none"
+                    android:enabled="false"
+                    android:fontFamily="@font/boldsp"
+                    android:gravity="center|left"
+                    android:hint="@string/non"
+                    android:maxLength="15"
+                    android:maxLines="1"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textColor="@color/gray_text" />
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="@color/red"
+                android:background="@drawable/button_green"
+                android:text="Выход"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </TableLayout>
+
+    </ScrollView>
+
+
 
     <com.github.ybq.android.spinkit.SpinKitView
         android:id="@+id/progress_bar"

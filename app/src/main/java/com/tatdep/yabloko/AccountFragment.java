@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -48,6 +49,7 @@ public class AccountFragment extends Fragment {
     private EditText ed1,ed2,ed3,ed4,ed5;
     private CircleImageView icon;
     private SpinKitView progressBarr;
+    private Button btn;
 
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     getSplittedPathChild getSplittedPathChild = new getSplittedPathChild();
@@ -75,6 +77,19 @@ public class AccountFragment extends Fragment {
              }
          });
         viewData();
+        btn = view.findViewById(R.id.btn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent mainIntent = new Intent(getContext(), SignIn.class);
+                getActivity().startActivity(mainIntent);
+
+                getActivity().finish();
+
+
+            }
+        });
         return view;
     }
 

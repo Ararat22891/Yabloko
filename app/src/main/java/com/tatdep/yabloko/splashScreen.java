@@ -17,10 +17,18 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.tatdep.yabloko.cods.Accounts_Data;
+import com.tatdep.yabloko.cods.User;
 import com.tatdep.yabloko.cods.autosave;
+import com.tatdep.yabloko.cods.getSplittedPathChild;
 
 import java.util.Objects;
 
@@ -30,6 +38,7 @@ public class splashScreen extends AppCompatActivity {
 private  final int splash_screen_delay = 2000;
 private FirebaseUser firebaseUser;
 private FirebaseAuth firebaseAuth;
+private String dolz = "Пользователь";
 
 
     @Override
@@ -56,23 +65,86 @@ private FirebaseAuth firebaseAuth;
             @Override
             public void run() {
                 if (firebaseUser!=null) {
-                    if(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).isEmailVerified()){
-                        assert firebaseUser!=null;
-                        Intent mainIntent = new Intent(splashScreen.this, AdminMainModeratorsActivity.class);
-                        splashScreen.this.startActivity(mainIntent);
+                    getSplittedPathChild getSplittedPathChild = new getSplittedPathChild();
 
-                        splashScreen.this.finish();
+                    DatabaseReference  ref = FirebaseDatabase.getInstance().getReference("user").child(getSplittedPathChild.getSplittedPathChild(firebaseUser.getEmail())).child("acc").getRef();
+                    dolz = "Пользователь";
+                    ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            Accounts_Data acc = snapshot.getValue(Accounts_Data.class);
 
-                        overridePendingTransition(R.anim.splash_exiting, R.anim.login_entering);
+                            dolz = acc != null?acc.dolz:"";
+                            if (acc != null && (Objects.equals(dolz, "Модератор") || Objects.equals(dolz, "Администратор"))){
+                                Intent mainIntent = new Intent(splashScreen.this, MainActivity.class);
+                                switch (dolz){
+                                    case "Администратор":
+                                        mainIntent = new Intent(splashScreen.this, AdminMainActivity.class);
+                                        break;
+                                    case "Модератор":
+                                        mainIntent = new Intent(splashScreen.this, ModeratorMainActivity.class);
+                                        break;
+                                }
+                                splashScreen.this.startActivity(mainIntent);
 
-                    }
-                    else {
-                        Intent intent = new Intent(splashScreen.this, EmailConfirm.class);
-                        splashScreen.this.startActivity(intent);
+                                splashScreen.this.finish();
 
-                        splashScreen.this.finish();
-                        overridePendingTransition(R.anim.splash_exiting,R.anim.login_entering);
-                    }
+                                overridePendingTransition(R.anim.splash_exiting, R.anim.login_entering);
+                            }
+
+                            if(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).isEmailVerified() ){
+                                assert firebaseUser!=null;
+
+                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                String ref = "user";
+                                DatabaseReference myRef = database.getReference(ref);
+                                String childRef = getSplittedPathChild.getSplittedPathChild(firebaseUser.getEmail());
+
+                                myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                        User user = snapshot.child(childRef).getValue(User.class);
+                                        String isNew = user.isNew.toString();
+                                        if (isNew.equals("new")) {
+                                            Intent intent = new Intent(splashScreen.this, RegisterFullActivity.class);
+                                            splashScreen.this.startActivity(intent);
+                                            splashScreen.this.finish();
+                                            overridePendingTransition(R.anim.splash_exiting, R.anim.login_entering);
+                                        } else if (user.isNew != "old") {
+                                            Intent x = new Intent(splashScreen.this, MainActivity.class);
+                                            splashScreen.this.startActivity(x);
+                                            splashScreen.this.finish();
+                                            overridePendingTransition(R.anim.splash_exiting, R.anim.login_entering);
+                                        }
+
+
+                                    }
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                    }
+                                });
+
+
+
+
+                            }
+                            else {
+                                Intent intent = new Intent(splashScreen.this, EmailConfirm.class);
+                                splashScreen.this.startActivity(intent);
+
+                                splashScreen.this.finish();
+                                overridePendingTransition(R.anim.splash_exiting,R.anim.login_entering);
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
                 }
 
                 else {

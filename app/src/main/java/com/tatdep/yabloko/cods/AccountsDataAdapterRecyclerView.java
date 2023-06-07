@@ -91,12 +91,14 @@ public class AccountsDataAdapterRecyclerView extends RecyclerView.Adapter<Accoun
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot childsnapshot) {
                                     Accounts_Data acc = childsnapshot.getValue(Accounts_Data.class);
-                                    assert acc != null;
-                                    if (acc.equals(current)){
-                                        current = acc;
-                                        DatabaseReference appealRef = snapshot.getRef();
-                                        appealRef.removeValue();
+                                    if(acc!=null){
+                                        if (acc.equals(current)){
+                                            current = acc;
+                                            DatabaseReference appealRef = FirebaseDatabase.getInstance().getReference("user").child(pC.getSplittedPathChild(user.email));
+                                            appealRef.removeValue();
+                                        }
                                     }
+
                                 }
 
                                 @Override

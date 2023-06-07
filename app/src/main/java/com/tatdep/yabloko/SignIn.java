@@ -34,12 +34,15 @@ import com.tatdep.yabloko.cods.User;
 import com.tatdep.yabloko.cods.autosave;
 import com.tatdep.yabloko.cods.getSplittedPathChild;
 
+import java.util.Objects;
+
 public class SignIn extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     Button textView;
     private TextView email,password;
     private String USER = "user";
+    private String dolz = "Пользователь";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,53 +87,92 @@ public class SignIn extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        if (task.isSuccessful()) {
-                            assert user != null;
-                            if (user.isEmailVerified()) {
-                                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                                String ref = USER;
-                                DatabaseReference myRef = database.getReference(ref);
-                                getSplittedPathChild getSplittedPathChild = new getSplittedPathChild();
-                                String childRef = getSplittedPathChild.getSplittedPathChild(user.getEmail());
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        getSplittedPathChild getSplittedPathChild = new getSplittedPathChild();
+                        DatabaseReference  ssilka = FirebaseDatabase.getInstance().getReference("user").child(getSplittedPathChild.getSplittedPathChild(user.getEmail())).child("acc").getRef();
+                        ssilka.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                Accounts_Data acc = snapshot.getValue(Accounts_Data.class);
+                                if (acc != null){
+                                    dolz = acc.dolz;
+                                }
 
-                                myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                                    @Override
-                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                        hideKeyboard();
-                                        User user = snapshot.child(childRef).getValue(User.class);
-                                            String isNew = user.isNew.toString();
-                                        if (isNew.equals("new")) {
-                                            Intent intent = new Intent(SignIn.this, RegisterFullActivity.class);
-                                            SignIn.this.startActivity(intent);
-                                            SignIn.this.finish();
-                                            overridePendingTransition(R.anim.splash_exiting, R.anim.login_entering);
-                                        } else if (user.isNew != "old") {
-                                            Intent x = new Intent(SignIn.this, MainActivity.class);
-                                            SignIn.this.startActivity(x);
-                                            SignIn.this.finish();
-                                            overridePendingTransition(R.anim.splash_exiting, R.anim.login_entering);
+                                if (task.isSuccessful() ) {
+                                    assert user != null;
+                                    if (acc != null){
+                                        switch (dolz){
+
+                                            case "Модератор":
+                                                Intent mainIntent = new Intent(SignIn.this, ModeratorMainActivity.class);
+                                                SignIn.this.startActivity(mainIntent);
+
+                                                SignIn.this.finish();
+
+                                                overridePendingTransition(R.anim.splash_exiting, R.anim.login_entering);
+                                                return;
+                                            case "Администратор":
+                                                Intent mn = new Intent(SignIn.this, AdminMainActivity.class);
+                                                SignIn.this.startActivity(mn);
+
+                                                SignIn.this.finish();
+
+                                                overridePendingTransition(R.anim.splash_exiting, R.anim.login_entering);
+                                                return;
                                         }
+                                    }
+                                    if (user.isEmailVerified() ) {
+                                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                        String ref = USER;
+                                        DatabaseReference myRef = database.getReference(ref);
+                                        String childRef = getSplittedPathChild.getSplittedPathChild(user.getEmail());
+
+                                        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                hideKeyboard();
+                                                User user = snapshot.child(childRef).getValue(User.class);
+                                                String isNew = user.isNew.toString();
+                                                if (isNew.equals("new")) {
+                                                    Intent intent = new Intent(SignIn.this, RegisterFullActivity.class);
+                                                    SignIn.this.startActivity(intent);
+                                                    SignIn.this.finish();
+                                                    overridePendingTransition(R.anim.splash_exiting, R.anim.login_entering);
+                                                } else if (user.isNew != "old") {
+                                                    Intent x = new Intent(SignIn.this, MainActivity.class);
+                                                    SignIn.this.startActivity(x);
+                                                    SignIn.this.finish();
+                                                    overridePendingTransition(R.anim.splash_exiting, R.anim.login_entering);
+                                                }
+
+
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError error) {
+
+                                            }
+                                        });
 
 
                                     }
-
-                                    @Override
-                                    public void onCancelled(@NonNull DatabaseError error) {
-
+                                    if (!user.isEmailVerified()) {
+                                        Toast.makeText(SignIn.this, "Пожалуйста, подтвердите почту", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(SignIn.this, EmailConfirm.class);
+                                        SignIn.this.startActivity(intent);
+                                        SignIn.this.finish();
+                                        overridePendingTransition(R.anim.splash_exiting, R.anim.login_entering);
                                     }
-                                });
+                                }
+                            }
 
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
 
                             }
-                            if (!user.isEmailVerified()) {
-                                Toast.makeText(SignIn.this, "Пожалуйста, подтвердите почту", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(SignIn.this, EmailConfirm.class);
-                                SignIn.this.startActivity(intent);
-                                SignIn.this.finish();
-                                overridePendingTransition(R.anim.splash_exiting, R.anim.login_entering);
-                            }
-                        }
+                        });
+
+
                     }
                 });
     }
