@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
                     android:textSize="20dp"
-                    android:inputType="text"
+                    android:inputType="textPassword"
                     android:hint="Пароль"
                     android:textColorHint="@color/gray"
                     android:theme="@style/textEditHandleGreen"

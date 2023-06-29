@@ -112,6 +112,14 @@ public class MeroprFragment extends Fragment {
                 String senderEmail = currentUser.getEmail(); // Почта отправителя
                 String message = mess.getText().toString(); // Текст сообщения
 
+                String mes = mess.getText().toString().trim();
+                if (mes.isEmpty() || mes.trim().isEmpty()) {
+                    // Выводите сообщение об ошибке или выполняйте другие действия, соответствующие пустому полю сообщения
+                    Toast.makeText(getContext(), "Введите сообщение", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference usersRef = database.getReference("user");
 
@@ -121,6 +129,10 @@ public class MeroprFragment extends Fragment {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         int index = 0; // Переменная для хранения индекса объекта
                         for (DataSnapshot accSnapshot : dataSnapshot.getChildren()) {
+                            if (accSnapshot == null){
+                                Toast.makeText(getContext(), "Не выбран член партии", Toast.LENGTH_SHORT).show();
+                                return;
+                            }
                             DatabaseReference userRef = accSnapshot.getRef().getParent(); // Получаем ссылку на родительский узел
                             Accounts_Data account = accSnapshot.child("acc").getValue(Accounts_Data.class);
 

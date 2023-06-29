@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/red"
             android:textSize="20dp"
-            android:inputType="text"
+            android:inputType="number"
             android:theme="@style/textEditHandleGreen"
             android:layout_marginVertical="20dp"
             android:singleLine="true"

@@ -33,6 +33,8 @@ import com.tatdep.yabloko.cods.User;
 import com.tatdep.yabloko.cods.getSplittedPathChild;
 import com.tatdep.yabloko.cods.requestParty;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import ru.tinkoff.decoro.MaskImpl;
@@ -451,6 +453,47 @@ public class MainParty extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String fioString = fio.getText().toString().trim();
+                if (fioString.isEmpty() || fioString.split(" ").length != 3) {
+                    fio.setHint("Введите корректные значения!");
+                    Toast.makeText(getActivity(), "Пожалуйста, введите корректные ФИО", Toast.LENGTH_SHORT).show();
+                    fio.setHintTextColor(getResources().getColor(R.color.red));
+                    return;
+                }
+                if (regOtd.getSelectedItem().toString().equals("не выбрано")){
+                    Toast.makeText(getActivity(), "Пожалуйста, введите рег отделение", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (mestnOtd.getSelectedItem().toString().equals("Не выбрано")){
+                    Toast.makeText(getActivity(), "Пожалуйста, введите местное отделение", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                String telNumberString = telNumber.getText().toString().trim();
+                if (telNumberString.isEmpty() || telNumberString.length() != 18) {
+                    telNumber.setHint("Введите корректные значения!");
+                    telNumber.setHintTextColor(getResources().getColor(R.color.red));
+                    Toast.makeText(getActivity(), "Пожалуйста, введите корректный телефон", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                String dateOfBirthString = date_birth.getText().toString().trim();
+                if (dateOfBirthString.isEmpty() || !isValidDate(dateOfBirthString)) {
+                    date_birth.setHint("Введите корректные значения!");
+                    Toast.makeText(getActivity(), "Пожалуйста, введите корректную даты", Toast.LENGTH_SHORT).show();
+                    date_birth.setHintTextColor(getResources().getColor(R.color.red));
+                    return;
+                }
+                String grazdString = grazd.getText().toString().trim();
+                if (grazdString.isEmpty()) {
+                    grazd.setHint("Введите корректные значения!");
+                    Toast.makeText(getActivity(), "Пожалуйста, введите корректное гражданство", Toast.LENGTH_SHORT).show();
+                    grazd.setHintTextColor(getResources().getColor(R.color.red));
+                    return;
+                }
+
                 String sex = "";
                 int checkedRadioButtonId = rd.getCheckedRadioButtonId();
                 if (checkedRadioButtonId == -1) {
@@ -489,6 +532,16 @@ public class MainParty extends Fragment {
         adapter.notifyDataSetChanged();
         spinner.setAdapter(adapter);
 
+    }
+    private boolean isValidDate(String date) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+        dateFormat.setLenient(false);
+        try {
+            dateFormat.parse(date);
+            return true;
+        } catch (ParseException e) {
+            return false;
+        }
     }
 
 

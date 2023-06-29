@@ -98,7 +98,7 @@ public class AdminMainModeratorsActivity extends AppCompatActivity {
                                         arrayList.add(acc);
                                 }
                                 else {
-                                    if (!acc.dolz.equals("Модератор"))
+                                    if (!acc.dolz.equals("Модератор") && !acc.dolz.equals("Администратор"))
                                         arrayList.add(acc);
                                 }
                             }

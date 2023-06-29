@@ -99,6 +99,14 @@ public class AddEventFragment extends Fragment {
                 hideKeyboard(view);
 
                 if (pathMain.getActiveUploadTasks().size() ==0){
+                    String text = editText.getText().toString().trim();
+                    if (text.isEmpty()) {
+                        // Выводите сообщение об ошибке или выполняйте другие действия, соответствующие пустому полю
+                        Toast.makeText(((MainActivity)getActivity()), "Вы не ввели текст", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+
                     if (editText.getText().toString().isEmpty()){
                         Toast.makeText(((MainActivity)getActivity()), "Вы не ввели текст", Toast.LENGTH_SHORT).show();
                         return;

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,7 +45,26 @@ public class PaymentFragment extends Fragment {
         payButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double amount = Double.parseDouble(amountEditText.getText().toString());
+                if (amountEditText.getText().toString().trim().isEmpty()) {
+                    Toast.makeText(getActivity(), "Пожалуйста, введите сумму", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (amountEditText.getText().toString().trim().equals("|")) {
+                    Toast.makeText(getActivity(), "Некорректная сумма", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                double amount;
+                try {
+                     amount = Double.parseDouble(amountEditText.getText().toString());
+                    // В этом месте можно продолжить выполнение операций с переменной amount, если нужно
+                } catch (NumberFormatException e) {
+                    Toast.makeText(getActivity(), "Некорректная сумма", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                 amount = Double.parseDouble(amountEditText.getText().toString());
                 String currency = "USD"; // валюта оплаты
                 String cryptoCurrency = "BTC"; // тип криптовалюты для оплаты
                 String orderId = UUID.randomUUID().toString(); // уникальный идентификатор заказа

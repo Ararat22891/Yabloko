@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -160,23 +161,34 @@ public class AppealAdapterRecyclerView extends RecyclerView.Adapter<AppealAdapte
                                     String subject = "Ответ по вашему обращению по теме \"" + currentAppeal.getAppealType() + "\""; // Тема письма
                                     String body = holder.edtReplay.getText().toString();
 
-                                    String htmlBody = "<html><body>" +
-                                            "<table>" +
-                                            "<tr>" +
-                                            "<td style=\"vertical-align: top; padding-right: 10px;\">" +
-                                            "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_%D0%AF%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE_%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BF%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D1%8B%D0%B9.svg/1024px-%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_%D0%AF%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE_%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BF%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D1%8B%D0%B9.svg.png\" style=\"width: 50px; height: 50px;\">" +
-                                            "</td>" +
-                                            "<td>" +
-                                            "<h1>Привет!</h1>" +
-                                            "<p>Ниже приведен ответ на ваше сообщение:</p>" +
-                                            "<p style=\"font-size: 18px;\"><strong>" + body + "</strong></p>" +
-                                            "<p>Партия Яблоко</p>" +
-                                            "</td>" +
-                                            "</tr>" +
-                                            "</table>" +
-                                            "</body></html>";
+                                    String bd = holder.edtReplay.getText().toString().trim();
+                                    if (body.isEmpty() || body.trim().isEmpty()) {
+                                        // Выводите сообщение об ошибке или выполняйте другие действия, соответствующие пустому полю body
+                                        Toast.makeText(view.getContext(), "Введите текст", Toast.LENGTH_SHORT).show();
+                                        return;
+                                    }
+                                    else {
+                                        String htmlBody = "<html><body>" +
+                                                "<table>" +
+                                                "<tr>" +
+                                                "<td style=\"vertical-align: top; padding-right: 10px;\">" +
+                                                "<img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_%D0%AF%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE_%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BF%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D1%8B%D0%B9.svg/1024px-%D0%9B%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF_%D0%AF%D0%B1%D0%BB%D0%BE%D0%BA%D0%BE_%D0%BC%D0%B0%D0%BB%D0%B5%D0%BD%D1%8C%D0%BA%D0%B8%D0%B9_%D0%BF%D1%80%D0%BE%D0%B7%D1%80%D0%B0%D1%87%D0%BD%D1%8B%D0%B9.svg.png\" style=\"width: 50px; height: 50px;\">" +
+                                                "</td>" +
+                                                "<td>" +
+                                                "<h1>Привет!</h1>" +
+                                                "<p>Ниже приведен ответ на ваше сообщение:</p>" +
+                                                "<p style=\"font-size: 18px;\"><strong>" + body + "</strong></p>" +
+                                                "<p>Партия Яблоко</p>" +
+                                                "</td>" +
+                                                "</tr>" +
+                                                "</table>" +
+                                                "</body></html>";
 
-                                    EmailSender.sendEmail(recipient, subject, htmlBody);
+                                        EmailSender.sendEmail(recipient, subject, htmlBody);
+                                    }
+
+
+
 
                                     return; // Прерываем цикл, так как элемент уже найден
                                 }

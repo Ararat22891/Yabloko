@@ -70,26 +70,27 @@ public class RegisterFullActivity extends AppCompatActivity {
 
 
 
-        if(fio.getText().toString().isEmpty() || fio.getText().toString().split(" ").length!=3){
+        if (fio.getText().toString().trim().isEmpty() || fio.getText().toString().trim().split(" ").length != 3) {
             fio.setHint("Введите корректные значения!");
-            Toast.makeText(RegisterFullActivity.this, "Пожалйста, введите корректные ФИО", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegisterFullActivity.this, "Пожалуйста, введите корректные ФИО", Toast.LENGTH_SHORT).show();
             fio.setHintTextColor(getResources().getColor(R.color.red));
             return;
         }
 
-        if(region.getText().toString().isEmpty()){
+        if (region.getText().toString().trim().isEmpty()) {
             region.setHint("Введите корректные значения!");
-            Toast.makeText(RegisterFullActivity.this, "Пожалйста, введите корректный регион из списка", Toast.LENGTH_SHORT).show();
+            Toast.makeText(RegisterFullActivity.this, "Пожалуйста, введите корректный регион из списка", Toast.LENGTH_SHORT).show();
             region.setHintTextColor(getResources().getColor(R.color.red));
             return;
         }
 
-
-        if(telNumber.getText().toString().isEmpty() || telNumber.getText().toString().length()!=18){
+        if (telNumber.getText().toString().trim().isEmpty() || telNumber.getText().toString().trim().length() != 18) {
             telNumber.setHint("Введите корректные значения!");
             telNumber.setHintTextColor(getResources().getColor(R.color.red));
             return;
         }
+
+
 
         switch (v.getId()){
             case R.id.button:

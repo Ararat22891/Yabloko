@@ -115,6 +115,7 @@ public class AccountFragment extends Fragment {
         icon=v.findViewById(R.id.icon);
         nameAge = v.findViewById(R.id.name_surname);
         rasp = v.findViewById(R.id.rasp);
+
         ed1 =v.findViewById(R.id.ed1);
         ed2 =v.findViewById(R.id.ed2);
         ed3 =v.findViewById(R.id.ed3);

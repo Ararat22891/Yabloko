@@ -32,6 +32,7 @@ import com.tatdep.yabloko.cods.getSplittedPathChild;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -58,13 +59,30 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     public void onRegister(View v){
-        if (email.getText().toString().isEmpty()|| password.getText().toString().isEmpty()|| enterPass.getText().toString().isEmpty()){
-            Toast.makeText(RegisterActivity.this,"Вы ввели не все данные", Toast.LENGTH_SHORT).show();
+        if (email.getText().toString().trim().isEmpty()) {
+            Toast.makeText(RegisterActivity.this, "Поле электронной почты не заполнено", Toast.LENGTH_SHORT).show();
             return;
         }
-        else{
-                onSigning();
+
+        if (password.getText().toString().trim().isEmpty()) {
+            Toast.makeText(RegisterActivity.this, "Поле пароля не заполнено", Toast.LENGTH_SHORT).show();
+            return;
         }
+
+        if (enterPass.getText().toString().trim().isEmpty()) {
+            Toast.makeText(RegisterActivity.this, "Поле подтверждения пароля не заполнено", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
+
+        if (password.getText().toString().trim().isEmpty()) {
+            Toast.makeText(RegisterActivity.this, "Пароль не может состоять только из пробелов", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        onSigning();
+
     }
 
     private void init(){

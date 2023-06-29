@@ -53,10 +53,11 @@ public class SignIn extends AppCompatActivity {
 
 
         public void onClick (View v){
-            if (email.getText().toString().isEmpty()|| password.getText().toString().isEmpty()){
-                Toast.makeText(SignIn.this,"Вы ввели не все данные", Toast.LENGTH_SHORT).show();
+            if (email.getText().toString().trim().isEmpty() || password.getText().toString().trim().isEmpty()) {
+                Toast.makeText(SignIn.this, "Вы ввели не все данные", Toast.LENGTH_SHORT).show();
                 return;
             }
+
 
             else
                 checkingNewUser();

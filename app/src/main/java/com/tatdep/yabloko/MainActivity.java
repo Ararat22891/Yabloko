@@ -333,12 +333,35 @@ private void saveData(){
         public void onDataChange(@NonNull DataSnapshot snapshot) {
             User user1 = snapshot.child(getSplittedPathChild.getSplittedPathChild(user.getEmail())).child("acc").getValue(User.class);
             Map<String, Object> map = user1.toMap();
-                map.put("polit_pred",ed1.getText().toString());
-                map.put("regilgia",ed2.getText().toString());
-                map.put("mainInLife",ed3.getText().toString());
-                map.put("mainInMan",ed4.getText().toString());
-                map.put("vdox",ed5.getText().toString());
+            if (!ed1.getText().toString().trim().isEmpty()) {
+                String politPred = ed1.getText().toString().trim();
+                map.put("polit_pred", politPred);
+            }
+
+            if (!ed2.getText().toString().trim().isEmpty()) {
+                String regilgia = ed2.getText().toString().trim();
+                map.put("regilgia", regilgia);
+            }
+
+            if (!ed3.getText().toString().trim().isEmpty()) {
+                String mainInLife = ed3.getText().toString().trim();
+                map.put("mainInLife", mainInLife);
+            }
+
+            if (!ed4.getText().toString().trim().isEmpty()) {
+                String mainInMan = ed4.getText().toString().trim();
+                map.put("mainInMan", mainInMan);
+            }
+
+            if (!ed5.getText().toString().trim().isEmpty()) {
+                String vdox = ed5.getText().toString().trim();
+                map.put("vdox", vdox);
+            }
+
+            if (!map.isEmpty()) {
                 ref.child(getSplittedPathChild.getSplittedPathChild(user.getEmail())).child("acc").updateChildren(map);
+            }
+
         }
 
         @Override
